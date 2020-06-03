@@ -1,0 +1,17 @@
+body{
+    font-family: Consolas, sans-serif;
+}
+
+textarea{
+    resize: none;
+    width: calc(100% - 10px);
+}
+
+
+table{
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+.fl{
+    margin-right: 1%;
+}
