@@ -7,46 +7,45 @@
     <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />  <link href="./tea_search.css" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2|Comic+Neue|Open+Sans&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
     
   </head>
   <body>
-    <h1 style=font-size:45px>Tea Search</h1>
+    <h1 style="font-size:45px; text-align: center;">Tea Search</h1>
   <div class = wrapper_main> 
-    <div id = "filterbar"style = "grid-row: 2/6; ">
-      <!-- <button type = "button" id = "btn_filter" onclick="btn_filter()">Filter </button> -->
+    <b style = "font-size: 25px;position: absolute;left: 2%;top: 20%; "><i class="fas fa-arrow-down"></i> Click to filter tea </b>
+    <div class="centered">
+      
+      <input id="chck" type="checkbox">
+      <label for="chck">Filter<span class="qmark"> OFF</span><span class="fstop">ON</span></label>
+      <div class="bg"></div>
+    </div>
+    <div id = "filtermenu"style = "grid-row: 2; ">
+      
       <ul>
-        <li class=filter><a href="#">Taste</a>
-          
-          <ul>
-            <li><a href="#">A</a></li>
-            <li><a href="#">B</a></li>
-            <li><a href="#">C</a></li>
-            <li><a href="#">D</a></li>
+        <li><a href="#">Flavor</a>
+          <ul class = subbar>
+            <li><a href="#">Sweat</a></li>
+            <li><a href="#">Sour</a></li>
+            <li><a href="#">bitter</a></li>
+            <li><a href="#">fruit</a></li>
+            <li><a href="#">Herb</a></li>
+            <li><a href="#">savory</a></li>
           </ul>
         </li>
-        <li class=filter><a href="#">Scent</a>
-          
-          <ul>
-            <li><a href="#">A</a></li>
-            <li><a href="#">B</a></li>
-            <li><a href="#">C</a></li>
-            <li><a href="#">D</a></li>
-          </ul>
-        </li>
-        <li class=filter><a href="#"> Situation</a>
+        <li><a href="#"> Situation</a>
          
           <ul>
-            <li><a href="#">A</a></li>
-            <li><a href="#">B</a></li>
-            <li><a href="#">C</a></li>
-            <li><a href="#">D</a></li>
+            <li><a href="#">Rest</a></li>
+            <li><a href="#">Sleep</a></li>
+            <li><a href="#">Sad</a></li>
+            <li><a href="#">Angry</a></li>
           </ul>
         </li>
-        <li class=filter><a href="#">Effect</a>
+        <li><a href="#">Effect</a>
           
           <ul>
-            <li><a href="#">A</a></li>
+            <li><a href="#"></a></li>
             <li><a href="#">B</a></li>
             <li><a href="#">C</a></li>
             <li><a href="#">D</a></li>
@@ -54,36 +53,36 @@
         </li>
       </ul>
     </div>
+
     <div style="grid-column: 2/6">
-      <div class = "filterBox">
-        No filter
+      <div>
+        <div class = "filterBox">
+          <div class = filter_block>No filter</div>
+        </div>
       </div>
       <div class = "center">
-        Search by name: <input type="text" id="teaname" placeholder="Type tea name">
-        <button type = "button" id = "btn_search" onclick="btn_search()">Search</button>
+         <div class="form__group field">
+
+          <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+          <label for="name" class="form__label">Search by Name</label>
+          <button class = button type = "button" id = "btn_search" onclick="btn_search()">Search <i class="fas fa-search"></i></button>
+        </div>
+        
+        
       </div>
-      <div class = wrapper_image_grid>
-        <div class = grid><image src = https://cdn.pixabay.com/photo/2018/07/10/11/37/green-tea-3528474_1280.jpg alt = "Cannot Load Image" class = image></image><p>Green tea</p></div>
-        <div class = grid><image src = https://cdn.pixabay.com/photo/2018/07/10/11/37/green-tea-3528474_1280.jpg alt = "Cannot Load Image" class = image></image><p>Green tea</p></div>
-        <div class = grid><image src = https://cdn.pixabay.com/photo/2018/07/10/11/37/green-tea-3528474_1280.jpg alt = "Cannot Load Image" class = image></image><p>Green tea</p></div>
-        <div class = grid><image src = https://cdn.pixabay.com/photo/2018/07/10/11/37/green-tea-3528474_1280.jpg alt = "Cannot Load Image" class = image></image><p>Green tea</p></div>
+      <div class = wrapper_image_grid id=image_grid>
+        
         
       </div>
 
     </div>
   </div>
-    <h2>Menu</h2>
-    <ul>
-      <li><a href="main_page.html">Main Page</a></li>
-      <li><a href="tea_search.html">Tea Search</a></li>
-      <li><a href="community.html">Community</a></li>
-      <li><a href="mbteai.html">MBTeai</a></li>
-    
-    
-    </ul>
+
     <script src="jquery/js/jquery-1.9.0.min.js"></script>
     <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="./tea_information.js"></script>
     <script src="./tea_search.js"></script>
+    
 
     </body>
 </html>
