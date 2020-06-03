@@ -1,5 +1,103 @@
-body {
-    background-color: #eee;
+
+html,body{
+    height:100%;
+}
+
+.frame{
+    height:100%;
+    margin:0 auto;
+    border:1px solid #aaa;
+    font-family: 'Prompt', sans-serif;
 }
 
 /*your code here*/
+
+
+
+.container{
+    overflow:hidden;
+}
+
+.container-1{
+    height:20%;
+    text-align: right;
+}
+.container-2{
+    height:50%;
+    text-align:center;
+    margin-top:20px;
+    margin-bottom: 80px;
+}
+
+.container-3{
+    height:20%;
+    background: none ;
+    text-align: center;
+
+}
+
+#leaf_image{
+    color:#BDD387;
+    font-size:300px;
+}
+
+.button{
+    border-radius: 12px;
+    padding:10px;
+    text-align: center;
+    width:190px;
+    height:50px;
+    margin:10px;
+    border:none;
+    font-size:14px;
+    font-weight: bold;
+}
+
+.button.one{
+    background:#D3F1D2;
+}
+
+.button.two{
+    background:#D2E1AF;
+}
+
+.button.three{
+    background:#BDD388;
+}
+
+.button.four{
+    background:#BDD388;
+}
+
+.log{
+    border-radius: 15px;
+    padding:10px;
+    text-align: center;
+    width:100px;
+    margin:3px;
+    border:none;
+    maring-top:10px;
+}
+
+.log.in{
+    background-color:#5A80FC;
+    color:white;
+}
+
+.log.register{
+    background-color: white;
+    border:1px solid #5A80FC;
+
+    color:#5A80FC;
+}
+
+.text.tea{
+    font-size:50pt;
+    letter-spacing: 15px;
+    margin-top:0px;
+    margin-bottom: 0px;
+}
+
+.text.team{
+    font-size:15pt;
+}
