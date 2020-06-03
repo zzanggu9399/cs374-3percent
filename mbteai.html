@@ -30,48 +30,102 @@
     <div id = "instruction">
     <li class = "head">About MBTEAi</li>
     <p>
-      If you have a trouble to find a tea that fits to you?<br>
-      If you did, How about MBTEAi(My Best TEA information) test?
+      MBTEAi is 'My Best TEA information'<br>
+      MBTEAi suggest well-fitted tea to you based on personality test
     </p>
     <p>
-      MBTEAi suggest well-fitted tea to you based on personality test<br>
-      It's easiest way to find tea that you want
-    </p>
-    <p>
-      If you're ready to do, please answer under 20 questions<br>
-      Click the words that describe you well
+      Answer these 20 Questions and <br>
+      find your personality and well-fitted tea
     </p>
     </div>
     
     <div id = "example">
       <li class = "head"> Example Question </li>
-      <p>Please answer the question that describes you well</p>
+      <p>Please answer the question that describes you well (Try this!)</p>
       <p>
-        <table style="display:block" width=auto>
-          <tr>
-            <label style="padding-left:4%"><input type="radio" name="ex" value =""> Expand Energy, Enjoy Group </label><br>
-          </tr>
-          <tr>
-            <label style="padding-left:4%"><input type="radio" name="ex" value =""> Conserve energy, Enjoy one-to-one </label>
-          </tr>
+        <table class="ex_table" display=flex width=55%>
+          <tbody>
+          <tr><td>
+            <label><input type="radio" name="ex1" value =""> Expand Energy, Enjoy Group </label>
+          </td></tr>
+          <tr><td>
+            <label><input type="radio" name="ex1" value =""> Conserve energy, Enjoy one-to-one </label>
+          </td></tr>
+        </tbody>
         </table>
       </p>
+
       <p>
+        <table class="ex_table" display=flex width=55%>
+          <tbody>
+          <tr><td>
+            <label><input type="radio" name="ex2" value =""> Active, Initiative </label>
+          </td></tr>
+          <tr><td>
+            <label><input type="radio" name="ex2" value =""> Reflective, Deliberate </label>
+          </td></tr>
+        </tbody>
+        </table>
       </p>
+
     </div>
   </section>
-  </div>  
-<!--
-  <nav id ="float_menu">
-        <ul>
-          <li><a>MBTEAi</a></li>
-          <li><a href="main_page.html">Main Page</a></li>
-          <li><a href="tea_search.html">Tea Search</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="mbteai.html">MBTeai</a></li>
-        </ul>
-  </nav>
--->
+  <div id ="second">
+    <div id="MBTEAi" style="width:100%;">
+        <div style="width:100%; margin:0.5%; font-size:120%; text-align:center;">MBTEAi 20 Questions: &nbsp Please choose the answer in these
+           20 question which is describes your personality well</div>
+      <table class="MBTEAi_table">
+        <tbody>
+        <tr><td>
+          <label><input type="radio" name="q1" class="E"> Expand Energy, Enjoy Group </label>
+        </td></tr>
+        <tr><td>
+          <label><input type="radio" name="q1" class="I"> Conserve Energy, Enjoy one-to-one </label>
+        </td></tr>
+
+        <tr class = "blank"></tr>
+
+        <tr><td>
+          <label><input type="radio" name="q2" class="S"> Interpret literally </label>
+        </td></tr>
+        <tr><td>
+          <label><input type="radio" name="q2" class="N"> Look for meaning and possibilities </label>
+        </td></tr>
+
+        <tr class = "blank"></tr>
+
+        <tr><td>
+          <label ><input type="radio" name="q3" class="T"> Logical, Thinking, Questioning </label>
+        </td></tr>
+        <tr><td>
+          <label><input type="radio" name="q3" class="F"> Empathetic, Feeling, Accommodating </label>
+        </td></tr>
+
+        <tr class = "blank"></tr>
+
+        <tr><td>
+          <label><input type="radio" name="q4" class="J"> Organized, Orderly </label>
+        </td></tr>
+        <tr><td>
+          <label><input type="radio" name="q4" class="P"> Flexible, Adaptive </label>
+        </td></tr>
+
+        <tr class = "blank"></tr>
+
+        <tr><td>
+          <label><input type="radio" name="q5" class="E"> More outgoing, Think out loud </label>
+        </td></tr>
+        <tr><td>
+          <label><input type="radio" name="q5" class="I"> More reserved, Think to Yourself </label>
+        </td></tr>
+      </tbody>
+      </table>
+
+ 
+
+    </div>
+  </div>
+ 
 
     <script src="jquery/js/jquery-1.9.0.min.js"></script>
     <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
