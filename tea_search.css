@@ -1,6 +1,7 @@
 
 body {
-    background-color:#EFFFE9;
+    background-color:white;
+    /*#EFFFE9*/
     font-family: 'Prompt', sans-serif;
     margin-top: 7%;
 }
@@ -13,7 +14,7 @@ body {
 #filtermenu {  
     width: 150px;  
     height: 27px;  
-    margin-left: 22%;
+    margin-left: 15%;
     
 }  
    
@@ -79,15 +80,21 @@ body {
     #filtermenu a:hover {  
         font-weight: bold;  
     } 
+td {
+    width: 200px;
+    height: 70px;
+    margin: 0 auto;
+}
 
 .filter_block {
     background-color: white; 
     border-radius: 0.5rem;
     box-shadow: inset 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.15); 
-    width: 15%;
+    width: 170px;
     height: 40px; 
     padding-top:10px;
     font-size: 25px;
+    
 }
 
 #teaname {
@@ -98,11 +105,11 @@ body {
 .filterBox {
     width: 80%;
     height: 150px;
-    box-shadow: 5px 5px 10px #000808;
+    box-shadow: 2px 2px 5px #000808;
     padding: 10px;
     text-align: center;
     margin: 10px auto;
-    background: #E1FFD6
+    background: #f9fff9
 }
 .center {
     width: 100%;
@@ -115,13 +122,13 @@ body {
 .wrapper_main {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: 150px;
+    grid-auto-rows: 180px;
     
   }
 .wrapper_image_grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 500px;
+    grid-auto-rows: 450px;
     text-align: center;
     padding-left: 10%;
     padding-right: 10%;
@@ -133,7 +140,7 @@ body {
 }
 .image {
     width: 80%;
-    height: 300px;
+    height: 270px;
     margin: 0 auto;
     border-radius: 0.5rem;
     box-shadow:  0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.15);  
@@ -243,7 +250,7 @@ body {
 .centered {
 	position: absolute;
 	left: 9%;
-	top: 30%;
+	top: 35%;
 	margin-right: 0%;
     transform: translate(-50%, -50%);
     font-size: 30px;

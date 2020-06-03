@@ -13,7 +13,7 @@
   <body>
     <h1 style="font-size:45px; text-align: center;">Tea Search</h1>
   <div class = wrapper_main> 
-    <b style = "font-size: 25px;position: absolute;left: 2%;top: 20%; "><i class="fas fa-arrow-down"></i> Click to filter tea </b>
+    <b style = "font-size: 25px;position: absolute;left: 2%;top: 25%; "><i class="fas fa-arrow-down"></i> Click to filter tea </b>
     <div class="centered">
       
       <input id="chck" type="checkbox">
@@ -25,9 +25,9 @@
       <ul>
         <li><a href="#">Flavor</a>
           <ul class = subbar>
-            <li><a href="#">Sweat</a></li>
-            <li><a href="#">Sour</a></li>
-            <li><a href="#">bitter</a></li>
+            <li><a href="#" onclick = "addFilter('Sweat')">Sweat</a></li>
+            <li><a href="#" onclick = "addFilter()">Sour</a></li>
+            <li><a href="#" onclick = "addFilter()">bitter</a></li>
             <li><a href="#">fruit</a></li>
             <li><a href="#">Herb</a></li>
             <li><a href="#">savory</a></li>
@@ -45,10 +45,10 @@
         <li><a href="#">Effect</a>
           
           <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#">B</a></li>
-            <li><a href="#">C</a></li>
-            <li><a href="#">D</a></li>
+            <li><a href="#">Sore throat</a></li>
+            <li><a href="#">Insomnia</a></li>
+            <li><a href="#">Indigestion</a></li>
+            <li><a href="#">Fever</a></li>
           </ul>
         </li>
       </ul>
@@ -57,7 +57,24 @@
     <div style="grid-column: 2/6">
       <div>
         <div class = "filterBox">
-          <div class = filter_block>No filter</div>
+          <table>
+            <tr>
+              <td><div class = filter_block>No filter</div></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+          
+          
         </div>
       </div>
       <div class = "center">
