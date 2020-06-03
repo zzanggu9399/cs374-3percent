@@ -1,0 +1,54 @@
+body {
+    background-color:#EFFFE9;
+    font-family: 'Prompt', sans-serif;
+}
+li{
+    list-style: none;
+}
+#top{
+    background: #386129;
+    margin:1%;
+}
+#topmenu{
+    color:#EFFFE9;
+    font-size:180%;
+}
+.menu_cell{
+    padding-right: 0.5%;
+    padding-left: 0.5%;
+}
+#first{
+    display:flex;
+}
+#now{
+    color: #386129;
+    font-size:110%;
+}
+.head{
+    font-size:140%;
+    text-align:center;
+}
+#instruction{
+    float:left;
+    font-size:120%;
+    background: #a5d194;
+    border:10px;
+    padding:0.5%;
+    margin:1%;
+    width:40%;
+}
+#instruction p{
+    padding-left:5%;
+}
+#example{
+    float:left;
+    font-size:120%;
+    background: #a5d194;
+    border:10px;
+    padding:0.5%;
+    margin:1%;
+    width:54%;
+}
+#example p:not(table){
+    padding-left:4%;
+}
