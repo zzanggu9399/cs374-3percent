@@ -2,28 +2,66 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Team 3%</title>
+    <title>Team 3%- community</title>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />  <link href="./design.css" rel="stylesheet" />
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2|Comic+Neue|Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="community.css">
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="community.js"></script>
 
 
   </head>
   <body>
-
-    <h1>Community</h1>
-    <h2>Menu</h2>
-    <ul>
+    <header>
+      <h1>Tea community</h1>
+      <h2>Menu</h2>
+    </header>
+    <navigator>
+      <ul class="main_tab">
       <li><a href="main_page.html">Main Page</a></li>
       <li><a href="tea_search.html">Tea Search</a></li>
       <li><a href="community.html">Community</a></li>
       <li><a href="mbteai.html">MBTeai</a></li>
-    
     </ul>
-    <script src="jquery/js/jquery-1.9.0.min.js"></script>
-    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-    <script src="./team_3percent.js"></script>
+
+    <ul class="tabs">
+      <li class="tab-link current" data-tab="tab-1">All</li>
+      <li class="tab-link" data-tab="tab-2">Stressed</li>
+      <li class="tab-link" data-tab="tab-3">Sleep Well</li>
+      <li class="tab-link" data-tab="tab-4">Relax</li>
+      <li class="tab-link" data-tab="tab-5">Casually</li>
+    </ul>
+    </navigator>
+
+    <div class="container">
+    <div id="tab-1" class="tab-content current">
+      <table id="">
+        <tr>
+          <th>number</th>
+          <th>title</th>
+          <th>category</th>
+        </tr>
+      </table>
+    </div>
+    <div id="tab-2" class="tab-content">
+      Stressed
+    </div>
+    <div id="tab-3" class="tab-content">
+      Sleep Well
+    </div>
+    <div id="tab-4" class="tab-content">
+      Relax
+    </div>
+    <div id="tab-5" class="tab-content">
+      Casuaaly
+    </div>
+  </div>
+
+
 
     </body>
 </html>
