@@ -82,8 +82,7 @@ function addFilter(filter_name){
         }
     }
     filter_list[filter_list.length] =  filter_name.toLowerCase();
-    if (document.getElementById('chck').checked)
-        loading("",false)
+    loading("",false)
 
     
     
@@ -125,12 +124,13 @@ function filterTea(name,all){
     var cnt = 0;
     
     //if filter off and no search
-    if (!document.getElementById('chck').checked && name == ""){
-        show_all = true;
-    }
+    // if (name == ""){
+    //     show_all = true;
+    // }
 
     for (i=0; i<tea_list.length;i++){
-        if (show_all || (tea_list[i].name.toLowerCase().includes(name) && (!document.getElementById('chck').checked || filter_list.filter(value => tea_list[i].tag.includes(value)).length == filter_list.length))){
+
+        if (show_all || (tea_list[i].name.toLowerCase().includes(name) && ( filter_list.filter(value => tea_list[i].tag.includes(value)).length == filter_list.length))){
             cnt++;
             var div = document.createElement('div');
             div.className = "grid";
@@ -142,9 +142,16 @@ function filterTea(name,all){
             var p = document.createElement('p');
             p.innerHTML = tea_list[i].name
             p.style = "font-size:25px";
-            div.appendChild(image)
-            div.appendChild(p);
 
+            var figc = document.createElement('figcaption');
+            figc.innerHTML = tea_list[i].info;
+            figc.className ="bottom-right"
+
+            div.appendChild(image)
+            div.appendChild(figc);
+            div.appendChild(p);
+            
+            
             imagegrid.appendChild(div);
             
         }   
