@@ -16,8 +16,8 @@
     <b style = "font-size: 25px;position: absolute;left: 2%;top: 25%; "><i class="fas fa-arrow-down"></i> Click to filter tea </b>
     <div class="centered">
       
-      <input id="chck" type="checkbox">
-      <label for="chck">Filter<span class="qmark"> OFF</span><span class="fstop">ON</span></label>
+      <input id="chck" type="checkbox"  onclick = "filterTea('',false)">
+      <label for="chck" >Filter<span class="qmark"> OFF</span><span class="fstop">ON</span></label>
       <div class="bg"></div>
     </div>
     <div id = "filtermenu"style = "grid-row: 2; ">
@@ -26,51 +26,43 @@
         <li><a href="#">Flavor</a>
           <ul class = subbar>
             <li><a href="#" onclick = "addFilter('Sweat')">Sweat</a></li>
-            <li><a href="#" onclick = "addFilter()">Sour</a></li>
-            <li><a href="#" onclick = "addFilter()">bitter</a></li>
-            <li><a href="#">fruit</a></li>
-            <li><a href="#">Herb</a></li>
-            <li><a href="#">savory</a></li>
+            <li><a href="#" onclick = "addFilter('Sour')">Sour</a></li>
+            <li><a href="#" onclick = "addFilter('bitter')">bitter</a></li>
+            <li><a href="#" onclick = "addFilter('fruit')">fruit</a></li>
+            <li><a href="#" onclick = "addFilter('Herb')">Herb</a></li>
+            <li><a href="#" onclick = "addFilter('savory')">savory</a></li>
           </ul>
         </li>
         <li><a href="#"> Situation</a>
          
           <ul>
-            <li><a href="#">Rest</a></li>
-            <li><a href="#">Sleep</a></li>
-            <li><a href="#">Sad</a></li>
-            <li><a href="#">Angry</a></li>
+            <li><a href="#" onclick = "addFilter('Rest')">Rest</a></li>
+            <li><a href="#" onclick = "addFilter('Sleep')">Sleep</a></li>
+            <li><a href="#" onclick = "addFilter('Sad')">Sad</a></li>
+            <li><a href="#" onclick = "addFilter('Angry')">Angry</a></li>
           </ul>
         </li>
         <li><a href="#">Effect</a>
           
           <ul>
-            <li><a href="#">Sore throat</a></li>
-            <li><a href="#">Insomnia</a></li>
-            <li><a href="#">Indigestion</a></li>
-            <li><a href="#">Fever</a></li>
+            <li><a href="#" onclick = "addFilter('Cold')">Cold</a></li>
+            <li><a href="#" onclick = "addFilter('Insomnia')">Insomnia</a></li>
+            <li><a href="#" onclick = "addFilter('Indigestion')">Indigestion</a></li>
+            <li><a href="#" onclick = "addFilter('Fever')">Fever</a></li>
           </ul>
         </li>
       </ul>
     </div>
-
+    
     <div style="grid-column: 2/6">
       <div>
-        <div class = "filterBox">
-          <table>
+        <button class = button type = "button" id = "btn_reset" onclick="filterReset()" style ="float:right;margin-left: 50px;">Reset</button>
+        <div class = "filterBox" id = "filterBox">
+          <table id = filter_table>
             <tr>
               <td><div class = filter_block>No filter</div></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
             </tr>
           </table>
           
@@ -88,11 +80,10 @@
         
       </div>
       <div class = wrapper_image_grid id=image_grid>
-        
-        
       </div>
 
     </div>
+
   </div>
 <<<<<<< Updated upstream
 

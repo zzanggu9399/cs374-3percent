@@ -1,5 +1,5 @@
 body {
-    background-color:#EFFFE9;
+    background-color:white;
     font-family: 'Prompt', sans-serif;
 }
 li{
@@ -7,6 +7,7 @@ li{
 }
 #top{
     background: #386129;
+    border-radius: 3px;
     margin:1%;
 }
 #topmenu{
@@ -36,9 +37,13 @@ li{
     padding:0.5%;
     margin:1%;
     width:40%;
+    border-radius: 3px;
 }
 #instruction p{
     padding-left:5%;
+}
+.ex_table tbody tr td label{
+    padding-left:4%;
 }
 #example{
     float:left;
@@ -48,7 +53,52 @@ li{
     padding:0.5%;
     margin:1%;
     width:54%;
+    border-radius: 3px;
 }
-#example p:not(table){
+#example p{
     padding-left:4%;
 }
+#example table{
+    margin-left:4%;
+    border:1px solid black;
+    border-collapse: collapse;
+    display:table;
+    overflow-x:auto;
+}
+#example table tr td{
+    border:1px solid black;
+}
+#MBTEAi span{
+    text-align:center;
+}
+#second{
+    display:flex;
+    background: #a5d194;
+    margin:1%;
+    border-radius: 3px;
+}
+.MBTEAi_table{
+    float:left;
+    width: 24%;
+    margin-left: 1%;
+    display:table;
+    border-collapse: collapse;
+    empty-cells: hide;
+}
+.blank{
+    height:10px;
+}
+
+.MBTEAi_table tbody tr td{
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
