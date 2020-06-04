@@ -12,11 +12,18 @@
   </head>
   <body>
     <h1 style="font-size:45px; text-align: center;">Tea Search</h1>
+    <div id='mask' style='position:absolute; z-index:9000; display:none; left:44%; top:60%; margin: 0 auto;'>
+      <div id = 'loadingImg'class="loadingio-spinner-spinner-ym03njjekeg"><div class="ldio-r4fy2itdi8q">
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        </div></div>
+    </div>
+
+  
   <div class = wrapper_main> 
     <b style = "font-size: 25px;position: absolute;left: 2%;top: 25%; "><i class="fas fa-arrow-down"></i> Click to filter tea </b>
     <div class="centered">
       
-      <input id="chck" type="checkbox"  onclick = "filterTea('',false)">
+      <input id="chck" type="checkbox"  onclick = "loading('',false)">
       <label for="chck" >Filter<span class="qmark"> OFF</span><span class="fstop">ON</span></label>
       <div class="bg"></div>
     </div>
@@ -74,7 +81,8 @@
 
           <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
           <label for="name" class="form__label">Search by Name</label>
-          <button class = button type = "button" id = "btn_search" onclick="btn_search()">Search <i class="fas fa-search"></i></button>
+          <button class = button type = "button" id = "btn_search" onclick="searchTea()">Search <i class="fas fa-search"></i></button>
+          <button class = button type = "button" id = "btn_all" onclick="loading('',false)">All</i></button>
         </div>
         
         

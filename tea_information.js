@@ -19,24 +19,24 @@ tea_information = [
         src: "https://cdn.pixabay.com/photo/2015/09/12/20/19/lemon-tea-937245_1280.jpg",
         tag: ["sour"]
     },
-    {
-        name: "Green tea",
-        src: " ",
-        tag: []
-    },
-    {
-        name: "Green tea",
-        src: " ",
-        tag: []
-    },
-    {
-        name: "Green tea",
-        src: " ",
-        tag: []
-    },
-    {
-        name: "Green tea",
-        src: " ",
-        tag: []
-    }
+    // {
+    //     name: "Green tea",
+    //     src: " ",
+    //     tag: []
+    // },
+    // {
+    //     name: "Green tea",
+    //     src: " ",
+    //     tag: []
+    // },
+    // {
+    //     name: "Green tea",
+    //     src: " ",
+    //     tag: []
+    // },
+    // {
+    //     name: "Green tea",
+    //     src: " ",
+    //     tag: []
+    // }
 ]

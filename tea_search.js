@@ -1,12 +1,50 @@
 /*tea_search.js*/
 
+/*Variables */
 var tea_list = tea_information;
 var filter_list = new Array();
-
+var tea_name_list = new Array();
+for (i=0;i < tea_list.length;i++){
+    tea_name_list[i] = tea_list[i].name;
+}
+var auto_selected = false;//check is auto selected
 
 $( document ).ready(function() {
-    filterTea("",true);
+    loading("",true);
 });
+
+document.addEventListener('keydown', function(event) {
+    //press enter
+    if(event.keyCode == 13) {
+      if(!auto_selected){
+        document.getElementById("btn_search").click();
+        $( "#name" ).autocomplete("close");
+      }
+      else{
+        auto_selected = false;
+      }   
+    }
+  });
+
+  //Autocomplete
+$( function() {
+    var availableTags = tea_name_list;
+    $( "#name" ).autocomplete({
+        source: availableTags,
+        minLength: 2,
+        focus: function( event, ui ) {
+            var answer = document.getElementById("name");
+            answer.value = ui.item.value;
+        },
+        select: function(event, ui){
+            auto_selected = true;
+            var answer = document.getElementById("name");
+            answer.value = ui.item.value;
+            document.getElementById("btn_search").click();
+            return false; //it clear input if select function return false
+        }
+      });
+  } );
 
 function addFilter(filter_name){
     //filter already exist
@@ -44,7 +82,11 @@ function addFilter(filter_name){
         }
     }
     filter_list[filter_list.length] =  filter_name.toLowerCase();
-    filterTea("",false)
+    if (document.getElementById('chck').checked)
+        loading("",false)
+
+    
+    
 };
 
 function filterReset(){
@@ -73,25 +115,22 @@ function filterReset(){
     ft.rows[0].insertCell(0);
     ft.rows[0].cells[0].appendChild(div);
     filter_list = new Array();
-    filterTea("",true)
+    loading("",true)
 };
 
 function filterTea(name,all){
+    
     var imagegrid = document.getElementById('image_grid');
     var show_all = all;
     var cnt = 0;
-    //if filter off
-    if (!document.getElementById('chck').checked){
+    
+    //if filter off and no search
+    if (!document.getElementById('chck').checked && name == ""){
         show_all = true;
-    }
-    //delete exist child
-    while(imagegrid.childElementCount>0){
-        imagegrid.removeChild(imagegrid.childNodes[0]);
-
     }
 
     for (i=0; i<tea_list.length;i++){
-        if (show_all || name == tea_list[i].name.toLowerCase() || tea_list[i].tag.filter(value => filter_list.includes(value)).length>0){
+        if (show_all || (tea_list[i].name.toLowerCase().includes(name) && (!document.getElementById('chck').checked || filter_list.filter(value => tea_list[i].tag.includes(value)).length == filter_list.length))){
             cnt++;
             var div = document.createElement('div');
             div.className = "grid";
@@ -106,13 +145,35 @@ function filterTea(name,all){
             div.appendChild(image)
             div.appendChild(p);
 
-            imagegrid.appendChild(div);   
+            imagegrid.appendChild(div);
+            
         }   
     }
     if (cnt == 0){
        var div = document.createElement('div');
-       div.style = "font-size:50px; margin-right:100px"
-       div.innerHTML = "No result"
+       div.style = "font-size:40px; margin-right:100px"
+       div.innerHTML = 'No result <i class="fas fa-exclamation-circle"></i>'
        imagegrid.appendChild(div); 
     }
+}
+
+function loading(name,all) {
+    var imagegrid = document.getElementById('image_grid');
+    //delete exist child
+    while(imagegrid.childElementCount>0){
+        imagegrid.removeChild(imagegrid.childNodes[0]);
+
+    }
+    document.getElementById('name').value = "";
+    var mask = document.getElementById('mask')
+    mask.style.display = "flex";
+
+    setTimeout(function(){filterTea(name,all); mask.style.display="none"}, 350);
+}
+
+function searchTea(){
+    var input = document.getElementById('name');
+    if (input.value == "" || input.value.replace(/\s/g, '') == "") return;
+    loading(input.value.toLowerCase(),false);
+    
 }
