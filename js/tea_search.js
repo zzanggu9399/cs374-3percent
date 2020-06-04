@@ -138,18 +138,24 @@ function filterTea(name,all){
             image.src = tea_list[i].src;
             image.alt = "Cannot Load Image";
             image.className = "image";
-            
+
+            var figc = document.createElement('div');
+            figc.innerHTML = tea_list[i].info.replace(/\n/g, '<br/>');
+            figc.className ="caption_center"
+
+            // var figc2 = document.createElement('div');
+            // figc2.innerHTML = tea_list[i].info.replace(/\n/g, '<br/>');
+            // figc2.className ="caption_info"
+
             var p = document.createElement('p');
-            p.innerHTML = tea_list[i].name
+            p.innerHTML = tea_list[i].name;
             p.style = "font-size:25px";
 
-            var figc = document.createElement('figcaption');
-            figc.innerHTML = tea_list[i].info;
-            figc.className ="bottom-right"
-
             div.appendChild(image)
-            div.appendChild(figc);
             div.appendChild(p);
+            div.appendChild(figc);
+            //div.appendChild(figc2);
+            
             
             
             imagegrid.appendChild(div);
