@@ -1,0 +1,61 @@
+body,html{
+    height:100%;
+}
+
+
+li{
+    list-style: none;
+}
+
+#top{
+    background: #386129;
+    margin:1%;
+}
+#topmenu{
+    color:#EFFFE9;
+    font-size:180%;
+}
+
+#now{
+    color: #386129;
+    font-size:110%;
+}
+
+.menu_cell{
+    padding-right: 0.5%;
+    padding-left: 0.5%;
+}
+
+ul.tabs li{
+    color:black;
+    display:inline-block;
+    padding:10px 15px;
+    cursor: pointer;
+    background: #ededed ;
+}
+
+ul.tabs li.current{
+    color:yellowgreen;
+    background-color: white ;
+}
+
+.tab-content{
+    display: none;
+    background:none;
+    /*padding :15px;*/
+}
+.tab-content.current {
+    display: block;
+}
+
+.container.one{
+    height:10%;
+    background-color: green;
+    margin-bottom: 0px;
+    padding:0px;
+}
+
+.container.two{
+    height:80%;
+    padding:10px 15px;
+}

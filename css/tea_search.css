@@ -167,7 +167,7 @@ td {
     justify-content: center;
   }
   
-  #btn_search {
+  .button {
     width: 140px;
     height: 45px;
     font-family: 'Roboto', sans-serif;
@@ -186,7 +186,7 @@ td {
     outline: none;
     }
   
-    #btn_search:hover {
+  .button:hover {
     background-color: #2EE59D;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;

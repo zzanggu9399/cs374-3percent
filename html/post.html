@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Team 3%</title>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />  <link href="./post.css" rel="stylesheet" />
+    <link href="../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />  <link href="../css/post.css" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
     
@@ -29,22 +29,24 @@
 
     <div style = "float: left;">  
       <select id="category" class="fl">
-        <option value="none">Category</option>
-        <option value="cat_stressed">
-          Stressed
-        </option><option value="cat_sleepwell">
-          Sleep Well
-        </option><option value="cat_relax">
-          Relax
-        </option><option value="cat_casually">
-          Casually
+        <option value="">Category</option>
+        <option value="1">
+          1
+        </option><option value="2">
+          2
+        </option><option value="3">
+          3
+        </option><option value="4">
+          4
+        </option><option value="5">
+          5
         </option>				
       </select>
     </div>    
     <input type="text" class="fl" id="title" style="width:calc(100% - 100px)" title="제목" placeholder="title">
     <textarea rows="10" class="form-control" placeholder="Have a good day" id="main_text"></textarea>
     <input type="submit" value="Post" class="post">
-    <input type="button" value="Cancel" class="cancel" onClick="location.href='community.html'">
+    <input type="submit" value="Cancel" class="cancel">
          
     	
       
@@ -53,10 +55,10 @@
 
     
 
-    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase.js"></script>
-    <script src="jquery/js/jquery-1.9.0.min.js"></script>
-    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-    <script src="./post.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="../jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="../js/post.js"></script>
 
     </body>
 </html>
