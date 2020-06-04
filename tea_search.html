@@ -11,16 +11,29 @@
     
   </head>
   <body>
-    <h1 style="font-size:45px; text-align: center;">Tea Search</h1>
+    <div>
+      <li id="top" height =200% style="list-style: none; margin-left: 22%;margin-bottom: 6%;">
+        <table id="topmenu" style ="text-align:center;">
+          <tr>
+            <td width=20% class = "menu_cell" style="cursor:pointer" onClick = "location.href='main_page.html'"> Main Page </td>
+            <td width=20% class = "menu_cell" style="cursor:pointer; background-color: #EFFFE9" onClick = "location.href='tea_search.html'"> Search </td>
+            <td width=20% class = "menu_cell"  style="cursor:pointer;" onClick = "location.href='tea_search.html'"> Community </td>
+            <td width=20% class = "menu_cell" style="cursor:pointer; " onClick = "location.href='mbteai.html'"> MBTEAi </td>
+          </tr>
+        </table>
+      </li>
+    <p></p>
+  </div>
+
     <div id='mask' style='position:absolute; z-index:9000; display:none; left:44%; top:60%; margin: 0 auto;'>
       <div id = 'loadingImg'class="loadingio-spinner-spinner-ym03njjekeg"><div class="ldio-r4fy2itdi8q">
         <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
         </div></div>
     </div>
-
+    
   
   <div class = wrapper_main> 
-    <b style = "font-size: 25px;position: absolute;left: 2%;top: 25%; "><i class="fas fa-arrow-down"></i> Click to filter tea </b>
+    <div style = "font-size: 25px;position: absolute;left: 2%;top: 25%; color: gray"><i class="fas fa-arrow-down"></i> Click to filter tea </div>
     <div class="centered">
       
       <input id="chck" type="checkbox"  onclick = "loading('',false)">

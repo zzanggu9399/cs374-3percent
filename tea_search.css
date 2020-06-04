@@ -3,7 +3,17 @@ body {
     background-color:white;
     /*#EFFFE9*/
     font-family: 'Prompt', sans-serif;
-    margin-top: 7%;
+    margin-top: 2%;
+}
+.menu_cell {
+    list-style: none;  
+    position: relative;  
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: inset 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.15); 
+}
+.menu_cell:hover {
+    background-color: #eee;  
 }
 
 #filtermenu, ul, li, li li {  
@@ -247,7 +257,7 @@ td {
   
   .form__field {
     font-family: inherit;
-    width: 70%;
+    width: 65%;
     border: 0;
     border-bottom: 2px solid #9b9b9b;
     outline: 0;
