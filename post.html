@@ -29,7 +29,7 @@
 
     <div style = "float: left;">  
       <select id="category" class="fl">
-        <option value="">Category</option>
+        <option value="none">Category</option>
         <option value="1">
           1
         </option><option value="2">
@@ -46,7 +46,7 @@
     <input type="text" class="fl" id="title" style="width:calc(100% - 100px)" title="제목" placeholder="title">
     <textarea rows="10" class="form-control" placeholder="Have a good day" id="main_text"></textarea>
     <input type="submit" value="Post" class="post">
-    <input type="submit" value="Cancel" class="cancel">
+    <input type="button" value="Cancel" class="cancel" onClick="location.href='community.html'">
          
     	
       
@@ -55,7 +55,7 @@
 
     
 
-    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase.js"></script>
     <script src="jquery/js/jquery-1.9.0.min.js"></script>
     <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
     <script src="./post.js"></script>
