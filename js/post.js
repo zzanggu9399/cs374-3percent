@@ -42,6 +42,7 @@ $( document ).ready(function() {
                 Title : title.value,
                 Content : maintext.value,
                 Category : category.value
+
             };
             console.log(dic);
             database.ref('text').push(dic);

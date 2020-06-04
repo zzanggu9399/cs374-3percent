@@ -50,7 +50,6 @@ ul.tabs li.current{
 
 .container.one{
     height:10%;
-    background-color: green;
     margin-bottom: 0px;
     padding:0px;
 }
@@ -59,3 +58,4 @@ ul.tabs li.current{
     height:80%;
     padding:10px 15px;
 }
+

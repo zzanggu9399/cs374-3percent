@@ -6,7 +6,7 @@
     <title>Team 3%- community</title>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2|Comic+Neue|Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/community.css">
@@ -50,37 +50,17 @@
           <thread>
             <tr>
               <th>번호</th>
+              <th>카테고리</th>
               <th>제목</th>
-              <th>작성자</th>
+              <th>댓글수</th>
               <th>날짜</th>
-              <th>조회수</th>
             </tr>
           </thread>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>hihilih?</td>
-              <td>user1</td>
-              <td>2020.05.13</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>hihilih?</td>
-              <td>user1</td>
-              <td>2020.05.13</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>hihilih?</td>
-              <td>user1</td>
-              <td>2020.05.13</td>
-              <td>2</td>
-            </tr>
+
           </tbody>
         </table>
-        <a class="btn pull-right">Post</a>
+        <input type="button"  class="post" value="post" onclick="location.href='post.html'">
 
       </div>
       <div id="tab-2" class="tab-content">
@@ -99,7 +79,7 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
     </body>
 
 </html>
