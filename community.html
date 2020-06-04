@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="community.css">
     <script src="jquery/js/jquery-1.9.0.min.js"></script>
     <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-    <script type="text/javascript" src="community.js"></script>
+    
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase.js"></script>
+    <script src="./community.js"></script>
 
 
   </head>
@@ -23,10 +24,16 @@
     </header>
     <navigator>
       <ul class="main_tab">
-      <li><a href="main_page.html">Main Page</a></li>
-      <li><a href="tea_search.html">Tea Search</a></li>
-      <li><a href="community.html">Community</a></li>
-      <li><a href="mbteai.html">MBTeai</a></li>
+        <li id="top" height =200%>
+          <table id="topmenu" style ="text-align:center;">
+            <tr>
+              <td width=20% class = "menu_cell" style="cursor:pointer" onClick = "location.href='main_page.html'"> Main Page </td>
+              <td width=20% class = "menu_cell" style="cursor:pointer" onClick = "location.href='tea_search.html'"> Search </td>
+              <td width=20% id="now"  class = "menu_cell" style="cursor:pointer; background-color: #EFFFE9;" onClick = "location.href='community.html'"> Community </td>
+              <td width=20% class = "menu_cell" style="cursor:pointer; " onClick = "location.href='mbteai.html'"> MBTEAi </td>
+            </tr>
+          </table>
+        </li>
     </ul>
 
     <ul class="tabs">
@@ -41,7 +48,7 @@
 
     <div class="container">
     <div id="tab-1" class="tab-content current">
-      <table id="">
+      <table id="table1">
         <tr>
           <th>number</th>
           <th>title</th>
@@ -59,7 +66,7 @@
       Relax
     </div>
     <div id="tab-5" class="tab-content">
-      Casuaaly
+      Casually
     </div>
   </div>
 

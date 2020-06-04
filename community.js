@@ -26,11 +26,34 @@ function copyDB(){
 		}
 	})
 }
+function printTable(list){
+	var tableid = document.getElementById("table1");
+	var numRows = tableid.rows.length;
+	for(var i=4;i<numRows;i++) {
+		tableid.deleteRow(1);
+	}
+	if(list.length == 0){
+		var newRow = tableid.insertRow(1);
+		var newCell1 = newRow.insertCell(0);
+		newCell1.colSpan = 4;
+		newCell1.innerHTML = "No Entry to Show";
 
-
+		newCell1.style.textAlign = 'center';
+	}
+	else{	
+		for(var i=0;i<list.length;i++){
+			var newRow = tableid.insertRow(i+1);
+			var newCell1 = newRow.insertCell(0);
+			var newCell2 = newRow.insertCell(1);
+			newCell1.innerHTML = list[i]["Category"];
+			newCell2.innerHTML = list[i]["Title"];
+		}
+	}
+}
 
 $(document).ready(function(){
 	copyDB();
+	printTable(all_text);
 
 	$('.tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
