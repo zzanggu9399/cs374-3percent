@@ -1,5 +1,7 @@
-body{
-    font-family: Consolas, sans-serif;
+html,body{
+    font-family: 'Prompt', sans-serif;
+    height:100%;
+
 }
 
 textarea{
@@ -7,14 +9,154 @@ textarea{
     width: calc(100% - 10px);
 }
 
-
-table{
-    margin: 0 auto;
-    border-collapse: collapse;
+li{
+    list-style: none;
 }
+
+
 
 
 category{
     width:calc(8%);
     margin-right: calc(3%);
+}
+
+#top{
+    background: #386129;
+    margin:1%;
+}
+#topmenu{
+    color:#EFFFE9;
+    font-size:180%;
+}
+
+#now{
+    color: #386129;
+    font-size:110%;
+}
+
+.menu_cell{
+    padding-right: 0.5%;
+    padding-left: 0.5%;
+}
+
+
+.wrapper{
+    height:80%;
+    margin-left:80px;
+    margin-right:40px;
+
+
+}
+
+.container{
+    width:80%;
+}
+
+.container.one{
+
+}
+
+.container.two{
+    height:5%;
+    margin-bottom: 4px;
+
+}
+
+.container.three{
+    height:10%;
+    margin-bottom: 0px;
+
+
+
+}
+
+.container.four{
+    margin-bottom: 10px;
+    height:50%;
+    border-bottom: 3px solid yellowgreen;
+}
+
+
+
+.fl{
+    height:20px;
+}
+
+#main_text{
+    height:350px;
+}
+
+.title_table{
+    border-top: 3px solid yellowgreen;
+    border-bottom: 3px solid darkgrey;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.text_area{
+    margin-bottom: 10px;
+    border-bottom: 3px solid yellowgreen;
+}
+
+
+/*
+button{
+  background:yellowgreen;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:40px;
+    width:20%;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+    text-align: center;
+}
+button:hover{
+  background:#fff;
+  color:yellowgreen;
+}
+button:before,button:after{
+  content:'';
+    position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: yellowgreen;
+  transition:400ms ease all;
+}
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+.cancel{
+    background-color: darkgrey;
+    color:black;
+}*/
+
+button{
+    width:100px;
+    height:40px;
+    font-size:15pt;
+    border:none;
+}
+
+.post{
+    background-color: yellowgreen;
+    color:white;
+}
+
+.cancel{
+    background-color: darkgrey;
+    color:white;
 }
