@@ -35,6 +35,13 @@ $( document ).ready(function() {
         var category = document.getElementById("category");
         var author = document.getElementById("author");
         var password = document.getElementById("password");
+        let today = new Date();
+        let year = today.getFullYear(); // 년도
+        let month = today.getMonth() + 1;  // 월
+        let day = today.getDate();  // 날짜
+        let hours = today.getHours(); // 시
+        let minutes = today.getMinutes();  // 분
+        let date = year + '/' + month + '/' + day + " " + hours +":"+minutes;
 
         //alert(category.value);
         if (category.value == "none"||title.value==''||author.value ==''||password.value==''||maintext.value==''){
@@ -46,7 +53,8 @@ $( document ).ready(function() {
                 Content : maintext.value,
                 Category : category.value,
                 Author : author.value,
-                Password : password.value
+                Password : password.value,
+                Date : date
             };
             console.log(dic);
             database.ref('text').push(dic);
