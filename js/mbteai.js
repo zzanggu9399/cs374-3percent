@@ -7,20 +7,21 @@ $(document).ready(function(){
     $('#before i').hide();
     index = 1;
     $('#2table').hide();
-    $('#3table').hide();
-    $('#4table').hide();
+    he = $('#MBTEAi').height();
+    $('#before').height(he);
+    $('#after').height(he);
 
 })
 
 $('#after').click(function(){
     $('#'+index+'table').hide();
     index++;
-    $('#page_no').html(index+"/4");
+    $('#page_no').html(index+"/2");
     $('#'+index+'table').show();
     if(index != 1){
         $('#before i').show();
     } 
-    if(index == 4){
+    if(index == 2){
         $('#after i').hide();
     }
 })
@@ -28,17 +29,17 @@ $('#after').click(function(){
 $('#before').click(function(){
     $('#'+index+'table').hide();
     index--;
-    $('#page_no').html(index+"/4");
+    $('#page_no').html(index+"/2");
     $('#'+index+'table').show();
     if(index == 1){
         $('#before i').hide();
     } 
-    if(index != 4){
+    if(index != 2){
         $('#after i').show();
     }
 })
 
-$('.MBTEAi_table td').one('click', function(){
+$('.MBTEAi_table td').on('click', function(){
     var k = $(this).children();
     if(k != null){
         k = k.children();
@@ -58,7 +59,7 @@ $('#submit').click(function(){
         }
     }
     if(branch){
-
+        
     }
     else{
         alert('You have not answered Question '+l+' yet');

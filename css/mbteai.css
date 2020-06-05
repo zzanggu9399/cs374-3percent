@@ -31,50 +31,12 @@ li{
     font-size:140%;
     text-align:center;
 }
-#instruction{
-    float:left;
-    font-size:120%;
-    background: #a5d194;
-    border:10px;
-    padding:0.5%;
-    margin:1%;
-    width:40%;
-    border-radius: 3px;
-}
-#instruction p{
-    padding-left:5%;
-}
-.ex_table tbody tr td label{
-    padding-left:4%;
-}
-#example{
-    float:left;
-    font-size:120%;
-    background: #a5d194;
-    border:10px;
-    padding:0.5%;
-    margin:1%;
-    width:54%;
-    border-radius: 3px;
-}
-#example p{
-    padding-left:4%;
-}
-#example table{
-    margin-left:4%;
-    border:1px solid black;
-    border-collapse: collapse;
-    display:table;
-    overflow-x:auto;
-}
-#example table tr td{
-    border:1px solid black;
-}
 #cont{
     display:flex
 }
 #MBTEAi{
     position: relative;
+    padding-bottom:3%;
 }
 #MBTEAi span{
     text-align:center;
@@ -90,37 +52,48 @@ li{
     display:flex;
     background: #a5d194;
     margin:1%;
-    height:50%;
     border-radius: 3px;
 }
 .MBTEAi_table{
     float:left;
     margin-left:8%;
     font-size:160%;
-    border-collapse: collapse;
     empty-cells: hide;
+    border-collapse: collapse;
 }
 .blank{
-    height:10px;
+    height:30px;
 }
 
 .MBTEAi_table tbody tr{
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     padding:1%;
+
 }
 #before{
     transform:rotate(180deg);
     float:left;
     width:5%;
     margin-left:1%;
-    margin-top: 5%;
 }
 #after{
-    float:right;
     width:5%;
-    margin-top: 5%;
     margin-right:1%;
+    display:inline-block;
+    *display:inline;
+    vertical-align: middle;
 }
+
+#after div{
+    margin-top:auto;
+    margin-bottom: auto;
+    float:right;
+
+}
+#after div i{
+    height:0;
+}
+
 .first_cell{
     font-size:120%;
 }
