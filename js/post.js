@@ -1,5 +1,4 @@
-Post.js
-   
+
  /*  
 var firebaseConfig = {
     apiKey: "AIzaSyAC7HlE8qFQ6kKX7vgxJpU_bkBV30CuMLg",
@@ -34,16 +33,20 @@ $( document ).ready(function() {
         var title = document.getElementById("title");
         var maintext = document.getElementById("main_text");
         var category = document.getElementById("category");
-        alert(category.value);
-        if (category.value == "none"){
-            alert("should select category");
+        var author = document.getElementById("author");
+        var password = document.getElementById("password");
+
+        //alert(category.value);
+        if (category.value == "none"||title.value==''||author.value ==''||password.value==''||maintext.value==''){
+            alert("There is a empty field");
         }
         else{
             var dic = {
                 Title : title.value,
                 Content : maintext.value,
-                Category : category.value
-
+                Category : category.value,
+                Author : author.value,
+                Password : password.value
             };
             console.log(dic);
             database.ref('text').push(dic);

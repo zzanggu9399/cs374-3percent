@@ -12,6 +12,9 @@ table{
     margin: 0 auto;
     border-collapse: collapse;
 }
-.fl{
-    margin-right: 1%;
+
+
+category{
+    width:calc(8%);
+    margin-right: calc(3%);
 }
