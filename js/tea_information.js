@@ -2,14 +2,14 @@ tea_information = [
     {
         name: "Green tea",
         src: "https://cdn.pixabay.com/photo/2018/07/10/11/37/green-tea-3528474_1280.jpg",
-        tag: ['rest'],
-        info: "It is good tea"
+        tag: ['rest','bitter','indigestion'],
+        info: "Flavor: bitter\n\nSituation: Rest\n\nEffect: Indigestion"
     },
     {
         name: "Black tea",
         src: "https://cdn.pixabay.com/photo/2016/10/26/00/59/tea-1770415_1280.jpg",
         tag: ['rest'],
-        info: "It is good tea"
+        info: "Flavor: Sweet\n\nSituation: Rest\n\nEffect: -"
     },
     {
         name: "Barley tea",
