@@ -47,3 +47,21 @@ $('.MBTEAi_table td').one('click', function(){
         $("input:radio[name=" + n +"]:radio[value=" + v + "]").prop("checked", true);
     }
 })
+
+$('#submit').click(function(){
+    var l = []
+    var branch = true;
+    for(var i = 1 ; i<21 ; i++){
+        if(! $('input:radio[name=q'+i+']').is(':checked')){// if not checked
+            branch = false;
+            l.push(i+" ");
+        }
+    }
+    if(branch){
+
+    }
+    else{
+        alert('You have not answered Question '+l+' yet');
+    }
+
+})
