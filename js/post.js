@@ -34,6 +34,7 @@ $( document ).ready(function() {
         var title = document.getElementById("title");
         var maintext = document.getElementById("main_text");
         var category = document.getElementById("category");
+        alert(category.value);
         if (category.value == "none"){
             alert("should select category");
         }

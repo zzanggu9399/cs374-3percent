@@ -19,37 +19,105 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
 
-function printTable() {
+function cat_type(tab_id){
+    var cat_type;
+    if (tab_id=="tab-1"){
+        cat_type="all";
+    }else if (tab_id=="tab-2"){
+        cat_type="cat_stressed";
+    }else if (tab_id=="tab-3"){
+        cat_type="cat_sleepwell";
+    }else if (tab_id=="tab-4"){
+        cat_type="cat_relax";
+    }else if (tab_id=="tab-5"){
+        cat_type="cat_casually";
+    }
+
+    return cat_type;
+
+}
+
+function get_table(cat_type){
+    console.log(cat_type);
+    if (cat_type=="all"){
+        var tableid = document.getElementById("table_all");
+    }else if (cat_type=="cat_stressed"){
+        var tableid = document.getElementById("table_stressed");
+    }else if (cat_type=="cat_sleepwell"){
+        var tableid = document.getElementById("table_sleepwell");
+    }else if (cat_type=="cat_relax"){
+        var tableid = document.getElementById("table_relax");
+    }else if (cat_type=="cat_casually"){
+        var tableid = document.getElementById("table_casually");
+    }
+
+    return tableid
+}
+
+function printTable_type(myValue, keyList,tableid, category){
+    var j=1;
+    for (var i = 0; i < keyList.length; i++) {
+        var mykey = keyList[i];
+        if (category==myValue[mykey].Category) {
+            var newRow = tableid.insertRow(-1);
+            var newCell1 = newRow.insertCell(0);
+            var newCell2 = newRow.insertCell(1);
+            var newCell3 = newRow.insertCell(2);
+            newCell1.innerHTML = j;
+            newCell2.innerHTML = myValue[mykey].Category;
+            newCell3.innerHTML = myValue[mykey].Title;
+            j+=1;
+        }
+
+    }
+}
+
+
+function printTable(tab_id) {
     return firebase.database().ref('/text/').on('value', function (snapshot) {
-        var tableid = document.getElementById("table");
+        var category=cat_type(tab_id);
+        var tableid=get_table(category);
+        console.log(tableid);
+        //var tableid = document.getElementById("table_all");
         var numRows = tableid.rows.length;
         var myValue = snapshot.val();
-        for (var i = 4; i < numRows; i++) {
-            tableid.deleteRow(1);
-        }
+
         if (myValue == null) {
+            for (var i = 0; i <numRows-1; i++) {
+            tableid.deleteRow(1);
+            }
             var newRow = tableid.insertRow(1);
             var newCell1 = newRow.insertCell(0);
             newCell1.colSpan = 4;
             newCell1.innerHTML = "No Entry to Show";
-
             newCell1.style.textAlign = 'center';
         } else {
             var keyList = Object.keys(myValue);
-            for (var i = 0; i < keyList.length; i++) {
+            if (category=="all"){
+                for (var i = 0; i <numRows-1; i++) {
+                    tableid.deleteRow(1);
+                }
+                for (var i = 0; i < keyList.length; i++) {
                 var mykey = keyList[i];
-                var newRow = tableid.insertRow(i + 1);
+                var newRow = tableid.insertRow(-1);
                 var newCell1 = newRow.insertCell(0);
                 var newCell2 = newRow.insertCell(1);
                 var newCell3 = newRow.insertCell(2);
                 newCell1.innerHTML = i + 1;
                 newCell2.innerHTML = myValue[mykey].Category;
                 newCell3.innerHTML = myValue[mykey].Title;
-
+                }
+            }else{
+                for (var i = 0; i <numRows-1; i++) {
+                tableid.deleteRow(1);
+                }
+                printTable_type(myValue, keyList,tableid,category);
             }
+
         }
 
     });
+    $.click_row();
 }
 
 //when user click specific row, get data from firebase
@@ -67,17 +135,25 @@ $.click_row=function(){
             var title=myValue[key].Title;
             var content= myValue[key].Content;
             // get data 까지 구현완료
+            console.log(title);
+            document.getElementById("post_title").innerHTML=title;
+            document.getElementById("post_content").innerHTML=content;
+            $("#post_title").addClass("post_title_style");
+            $("#post_content").addClass("post_content_style");
+            $(".container.post").addClass("container_post_style");
+
         })
     });
 
 }
+//table 에 따라 row 출력하는거 고쳐야함
 
 
 
 
 
 
-    printTable();
+    printTable("tab-1");
     $.click_row();
 
     $('.tabs li').click(function(){
@@ -89,6 +165,9 @@ $.click_row=function(){
 
         $(this).addClass('current');
         $("#"+tab_id).addClass('current');
+
+        printTable(tab_id);
+        $.click_row();
     });
 
 });

@@ -55,7 +55,23 @@ ul.tabs li.current{
 }
 
 .container.two{
-    height:80%;
+    height:60%;
     padding:10px 15px;
 }
 
+.post_title_style{
+    font-size:20pt;
+    background-color: lightgray;
+}
+
+.post_content_style{
+    margin-top: 10px;
+    font-size:15pt;
+}
+
+.container_post_style{
+    height:29%;
+    margin-bottom: 10px;
+    border: 1px solid yellowgreen;
+
+}
