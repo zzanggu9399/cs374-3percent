@@ -34,7 +34,7 @@
         </table>
       </li>
     </navigator>
-    <div class="container one">
+    <div class="container one" >
       <ul class="tabs">
         <li class="tab-link current" data-tab="tab-1">All</li>
         <li class="tab-link" data-tab="tab-2">Stressed</li>
@@ -43,9 +43,11 @@
         <li class="tab-link" data-tab="tab-5">Casually</li>
       </ul>
     </div>
-    <div class="container post">
+    <div class="container post" style="display: none;">
       <div id="post_key" style="display:none;"></div>
-      <div id="post_title"></div>
+      <div id="post_title"style = "float: left;"></div>
+      <div id="delete_article"style = "float: left;"><input type="button" id="comment_btn" value="Delete"></div>
+      <div id="fix_article"><input type="button" id="comment_btn" value="Fix"></div>
       <div id="post_author" style = "float: left;"></div>
       <div id="post_date"></div>
       <div id="post_content"></div>
@@ -55,7 +57,15 @@
         <input type ="text" id="comment_password" style="width:calc(10%);" placeholder="password">
         <input type="button" id="comment_btn" value="Reply">
       </div>
-      <div id="post_comment"></div>
+      <div id="post_comment">
+        <table id = "commentTable">
+        <thread>
+          <tr>
+            <th colspan="4">댓글</th>
+          </tr>
+        </thread>
+      </table>
+    </div>
 
     </div>
     <div class="container two">

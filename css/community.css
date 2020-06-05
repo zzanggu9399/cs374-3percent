@@ -70,8 +70,12 @@ ul.tabs li.current{
 }
 
 .container_post_style{
-    height:29%;
+    overflow: auto;
+    height:auto;
     margin-bottom: 10px;
     border: 1px solid yellowgreen;
 
+}
+.container.post{
+    height: 50%;
 }

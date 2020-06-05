@@ -147,21 +147,41 @@ $(document).on('click', '#comment_btn', function(){
     var key = document.getElementById('post_key').value;
     var address = "text/" + key + "/Comments"
     console.log(key);
-    //var query = firebase.database().ref('/text/')[key];
-    let today = new Date();
-    let year = today.getFullYear(); // 년도
-    let month = today.getMonth() + 1;  // 월
-    let day = today.getDate();  // 날짜
-    let hours = today.getHours(); // 시
-    let minutes = today.getMinutes();  // 분
-    let date = year + '/' + month + '/' + day + " " + hours +":"+minutes;
-    var dic = {
-        Name : user_input,
-        Password : password_input,
-        Comment : comment_input,
-        Date : date
+    if (comment_input == ""||user_input==''||password_input ==''){
+        alert("There is a empty field");
     }
-    firebase.database().ref(address).push(dic);
+    else{
+        let today = new Date();
+        let year = today.getFullYear(); // 년도
+        let month = today.getMonth() + 1;  // 월
+        let day = today.getDate();  // 날짜
+        let hours = today.getHours(); // 시
+        let minutes = today.getMinutes();  // 분
+        let date = year + '/' + month + '/' + day + " " + hours +":"+minutes;
+        var dic = {
+            Name : user_input,
+            Password : password_input,
+            Comment : comment_input,
+            Date : date
+        }
+        firebase.database().ref(address).push(dic);
+        var table =document.getElementById("commentTable");
+        var numRows = table.rows.length;
+        var deleteBtn = document.createElement("button");
+        deleteBtn.innerHTML = "Delete";
+        var newRow = table.insertRow(numRows);
+        var newCell1 = newRow.insertCell(0);
+        var newCell2 = newRow.insertCell(1);
+        var newCell3 = newRow.insertCell(2);
+        var newCell4 = newRow.insertCell(3);
+        newCell1.innerHTML = user_input;
+        newCell2.innerHTML = comment_input;
+        newCell3.innerHTML = date
+        newCell4.appendChild(deleteBtn);
+
+    }
+    //var query = firebase.database().ref('/text/')[key];
+    
     //console.log(address);
 });
 
@@ -180,10 +200,51 @@ $.click_row=function(){
 
             var title=myValue[key].Title;
             var content= myValue[key].Content;
+            var table =document.getElementById("commentTable");
             //아직 안쓰는 것들
             var author = myValue[key].Author;
             var date = myValue[key].Date;
             var comments = myValue[key].Comments;
+
+
+
+
+            if (comments == null){
+                var numRows = table.rows.length;
+                    for (var i = 0; i <numRows-1; i++) {
+                        table.deleteRow(1);
+                    }
+                var newRow = table.insertRow(1);
+                var newCell1 = newRow.insertCell(0);
+                newCell1.colSpan = 4;
+                newCell1.innerHTML = "No Entry to Show";
+                newCell1.style.textAlign = 'center';
+            }
+            else{
+                var commentskey = Object.keys(comments); //코멘트들의 key array
+                console.log(commentskey);
+                var numRows = table.rows.length;
+                for (var i = 0; i <numRows-1; i++) {
+                    table.deleteRow(1);
+                }
+                for(var i =0;i<commentskey.length;i++) {
+                    
+                    
+                    var deleteBtn = document.createElement("button");
+                    deleteBtn.innerHTML = "Delete";
+                    var mykey = commentskey[i];
+                    var newRow = table.insertRow(1);
+                    var newCell1 = newRow.insertCell(0);
+                    var newCell2 = newRow.insertCell(1);
+                    var newCell3 = newRow.insertCell(2);
+                    var newCell4 = newRow.insertCell(3);
+                    newCell1.innerHTML = comments[mykey]["Name"];
+                    newCell2.innerHTML = comments[mykey]["Comment"];
+                    newCell3.innerHTML = comments[mykey]["Date"];
+                    newCell4.appendChild(deleteBtn);
+                }
+            }
+            
             // get data 까지 구현완료
             console.log(title);
             document.getElementById("post_title").innerHTML=title;
@@ -191,6 +252,7 @@ $.click_row=function(){
             document.getElementById("post_author").innerHTML=author;
             document.getElementById("post_date").innerHTML=date;
             document.getElementById("post_key").value=key;
+            $(".container.post").show();
             $("#posting_comment").show();
             $("#post_title").addClass("post_title_style");
             $("#post_content").addClass("post_content_style");
