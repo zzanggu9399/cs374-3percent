@@ -152,20 +152,42 @@ function printText(){
 
 //수정필요
 
-$(document).on('click', '#delete_post', function(){
+$(document).on('click', '#delete_post', function() {
     var key = document.getElementById('post_key').className;
-
+    var password;
     console.log(key);
-    var address = "text/";
-    var input_password=$('#delete_password').value;
-    alert(input_password);
-    var ref=firebase.database().ref(address);
-    if (input_password==ref.child(key).Password){
-        ref.child(key).remove();
+
+    var password_input = document.getElementById('delete_password').value
+    firebase.database().ref('/text/').on('value', function (snapshot) {
+        var myValue = snapshot.val();
+        if (myValue != null) {
+            var keyList = Object.keys(myValue);
+            for (var i = 0; i < keyList.length; i++) {
+                var myKey = keyList[i]
+                if (myKey == key) {
+                    password = myValue[myKey].Password;
+                    break;
+                }
+            }
+        }
+
+    });
+
+    if (password_input==password){
+        alert('complete');
+        firebase.database().ref('/text/').child(key).remove();
         $(".container.post").hide();
+        $('#delete_password').val('');
     }else{
-        alert("password is wrong");
+        alert('password is wrong');
+        $('#delete_password').val('');
     }
+});
+
+
+
+    /*alert(ref.val());
+
 
 
 
@@ -251,14 +273,13 @@ $(document).on('click', '#comment_btn', function(){
 
 
 $(document).on('click','.delete_comment',function(){
-    alert("his");
     var key=$(this).attr('value');
     var commentkey=$(this).attr('id');
     var address="text/" + key + "/Comments";
-    alert(address);
+
     var ref=firebase.database().ref(address);
     ref.child(commentkey).remove();
-
+    
 
 
 });
