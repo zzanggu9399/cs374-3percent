@@ -145,15 +145,35 @@ function printTable(tab_id) {
     });
     $.click_row();
 }
+
 function printText(){
 
 }
-$(document).on('click', '#delete_post', function(){
-    var key = document.getElementById('post_key').value;
-    var address = "text/" + key;
-    firebase.database().ref(address).remove();
-    $(".container.post").hide();
 
+//수정필요
+
+$(document).on('click', '#delete_post', function(){
+    var key = document.getElementById('post_key').className;
+
+    console.log(key);
+    var address = "text/";
+    var input_password=$('#delete_password').value;
+    alert(input_password);
+    var ref=firebase.database().ref(address);
+    if (input_password==ref.child(key).Password){
+        ref.child(key).remove();
+        $(".container.post").hide();
+    }else{
+        alert("password is wrong");
+    }
+
+
+
+})
+
+
+$(document).on('click', '#close', function(){
+    $(".container.post").hide();
 })
 
 /*
@@ -170,12 +190,16 @@ $(document).on('click', '.commentdel', function(){
 
 
 
+
+
+
+//when click reply button- write at firebase()
 $(document).on('click', '#comment_btn', function(){ 
     var comment_input = document.getElementById('comment_input').value;
     var user_input = document.getElementById('comment_name').value;
     var password_input = document.getElementById('comment_password').value;
     var key = document.getElementById('post_key').value;
-    var address = "text/" + key + "/Comments"
+    var address = "text/" + key + "/Comments";
     console.log(key);
     if (comment_input == ""||user_input==''||password_input ==''){
         alert("There is a empty field");
@@ -195,15 +219,13 @@ $(document).on('click', '#comment_btn', function(){
             Date : date
         }
         var commentkey = firebase.database().ref(address).push(dic).getKey();
-        console.log(commentkey);
+        alert(commentkey);
+
         var table =document.getElementById("commentTable");
         var numRows = table.rows.length;
         var deleteBtn = document.createElement("button");
         deleteBtn.innerHTML = "Delete";
-        deleteBtn.setAttribute("value",commentkey);
-        deleteBtn.setAttribute("id",commentkey);
-        console.log(deleteBtn.value);
-        console.log(deleteBtn.id);
+
         var newRow = table.insertRow(numRows);
         var newCell1 = newRow.insertCell(0);
         var newCell2 = newRow.insertCell(1);
@@ -211,14 +233,34 @@ $(document).on('click', '#comment_btn', function(){
         var newCell4 = newRow.insertCell(3);
         newCell1.innerHTML = user_input;
         newCell2.innerHTML = comment_input;
-        newCell3.innerHTML = date
+        newCell3.innerHTML = date;
         newCell4.appendChild(deleteBtn);
+        deleteBtn.setAttribute('class','delete_comment');
+        deleteBtn.setAttribute("value",key);
+        deleteBtn.setAttribute("id",commentkey);
+        console.log(deleteBtn.value);
+        console.log(deleteBtn.id);
         document.getElementById('comment_input').value = '';
 
     }
     //var query = firebase.database().ref('/text/')[key];
     
     //console.log(address);
+});
+
+
+
+$(document).on('click','.delete_comment',function(){
+    alert("his");
+    var key=$(this).attr('value');
+    var commentkey=$(this).attr('id');
+    var address="text/" + key + "/Comments";
+    alert(address);
+    var ref=firebase.database().ref(address);
+    ref.child(commentkey).remove();
+
+
+
 });
 
 
@@ -264,12 +306,14 @@ $.click_row=function(){
                     table.deleteRow(1);
                 }
                 for(var i =0;i<commentskey.length;i++) {
-                    
-                    
+
                     var deleteBtn = document.createElement("button");
                     deleteBtn.innerHTML = "Delete";
+                    deleteBtn.setAttribute('class','delete_comment');
+                    deleteBtn.setAttribute("value",key);
+                    deleteBtn.setAttribute("id",commentskey);
                     var mykey = commentskey[i];
-                    var newRow = table.insertRow(1);
+                    var newRow = table.insertRow(-1);
                     var newCell1 = newRow.insertCell(0);
                     var newCell2 = newRow.insertCell(1);
                     var newCell3 = newRow.insertCell(2);
@@ -287,9 +331,11 @@ $.click_row=function(){
             document.getElementById("post_content").innerHTML=content;
             document.getElementById("post_author").innerHTML=author;
             document.getElementById("post_date").innerHTML=date;
-            document.getElementById("post_key").value=key;
+            document.getElementById("post_key").className=key;
+
             $(".container.post").show();
             $("#posting_comment").show();
+
             $("#post_title").addClass("post_title_style");
             $("#post_content").addClass("post_content_style");
             $(".container.post").addClass("container_post_style");
