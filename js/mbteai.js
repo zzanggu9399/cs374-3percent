@@ -1,11 +1,16 @@
 //global variable
 var index; //for test page
+var E,S,T,J;
 
 $(document).ready(function(){
     $('#before i').hide();
     $('#prev').hide();
     index = 1;
     $('#2table').hide();
+    E = 0;
+    S = 0;
+    T = 0;
+    J = 0;
 })
 
 $('#prev').click(function(){
@@ -55,7 +60,13 @@ $('#submit').click(function(){
                 l.push(i+" ");
             }
         }
-        $(location).attr("href",'mbteai_result.html');
+        E = $('.E:radio:checked').length;
+        S = $('.S:radio:checked').length;
+        T = $('.T:radio:checked').length;
+        J = $('.J:radio:checked').length;
+
+        //$(location).attr("href",'mbteai_result.html?'+E+S+T+J);
+        $(location).attr("href",'mbteai_result.html?3333');
         
 
         /*
