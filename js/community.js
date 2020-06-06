@@ -58,14 +58,28 @@ function printTable_type(myValue, keyList,tableid, category){
     var j=1;
     for (var i = 0; i < keyList.length; i++) {
         var mykey = keyList[i];
+        var commentsCnt = 0;
+        if(myValue[mykey].Comments == null){
+            commentsCnt = 0;
+        }
+        else{
+            commentsCnt = Object.keys(myValue[mykey].Comments).length;
+        }
         if (category==myValue[mykey].Category) {
             var newRow = tableid.insertRow(-1);
             var newCell1 = newRow.insertCell(0);
             var newCell2 = newRow.insertCell(1);
             var newCell3 = newRow.insertCell(2);
+            var newCell4 = newRow.insertCell(3);
+            var newCell5 = newRow.insertCell(4);
+            var newCell6 = newRow.insertCell(5);
             newCell1.innerHTML = j;
             newCell2.innerHTML = myValue[mykey].Category;
             newCell3.innerHTML = myValue[mykey].Title;
+            newCell4.innerHTML = myValue[mykey].Author;
+            newCell5.innerHTML = commentsCnt;
+            newCell6.innerHTML = myValue[mykey].Date;
+            newRow.className = 'title1';
             j+=1;
         }
 
@@ -86,11 +100,6 @@ function printTable(tab_id) {
             for (var i = 0; i <numRows-1; i++) {
             tableid.deleteRow(1);
             }
-            var newRow = tableid.insertRow(1);
-            var newCell1 = newRow.insertCell(0);
-            newCell1.colSpan = 6;
-            newCell1.innerHTML = "No Entry to Show";
-            newCell1.style.textAlign = 'center';
         } else {
             var keyList = Object.keys(myValue);
             if (category=="all"){
@@ -139,6 +148,27 @@ function printTable(tab_id) {
 function printText(){
 
 }
+$(document).on('click', '#delete_post', function(){
+    var key = document.getElementById('post_key').value;
+    var address = "text/" + key;
+    firebase.database().ref(address).remove();
+    $(".container.post").hide();
+
+})
+
+/*
+$('#commentTable').on('click','button',(e) => {
+    //var key = $(this).attr('id')
+    console.log($(this).value);
+})
+
+$(document).on('click', '.commentdel', function(){
+    console.log($(this).value);
+})
+*/
+
+
+
 
 $(document).on('click', '#comment_btn', function(){ 
     var comment_input = document.getElementById('comment_input').value;
@@ -164,11 +194,16 @@ $(document).on('click', '#comment_btn', function(){
             Comment : comment_input,
             Date : date
         }
-        firebase.database().ref(address).push(dic);
+        var commentkey = firebase.database().ref(address).push(dic).getKey();
+        console.log(commentkey);
         var table =document.getElementById("commentTable");
         var numRows = table.rows.length;
         var deleteBtn = document.createElement("button");
         deleteBtn.innerHTML = "Delete";
+        deleteBtn.setAttribute("value",commentkey);
+        deleteBtn.setAttribute("id",commentkey);
+        console.log(deleteBtn.value);
+        console.log(deleteBtn.id);
         var newRow = table.insertRow(numRows);
         var newCell1 = newRow.insertCell(0);
         var newCell2 = newRow.insertCell(1);
@@ -178,6 +213,7 @@ $(document).on('click', '#comment_btn', function(){
         newCell2.innerHTML = comment_input;
         newCell3.innerHTML = date
         newCell4.appendChild(deleteBtn);
+        document.getElementById('comment_input').value = '';
 
     }
     //var query = firebase.database().ref('/text/')[key];
