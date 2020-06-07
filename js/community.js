@@ -220,7 +220,7 @@ $(document).on('click', '#comment_btn', function(){
     var comment_input = document.getElementById('comment_input').value;
     var user_input = document.getElementById('comment_name').value;
     var password_input = document.getElementById('comment_password').value;
-    var key = document.getElementById('post_key').value;
+    var key = document.getElementById('post_key').className;
     var address = "text/" + key + "/Comments";
     console.log(key);
     if (comment_input == ""||user_input==''||password_input ==''){
@@ -279,7 +279,7 @@ $(document).on('click','.delete_comment',function(){
 
     var ref=firebase.database().ref(address);
     ref.child(commentkey).remove();
-    
+
 
 
 });
