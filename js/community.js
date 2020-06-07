@@ -153,7 +153,7 @@ function printText(){
 //수정필요
 
 $(document).on('click', '#delete_post', function() {
-    var key = document.getElementById('post_key').className;
+    var key = document.getElementById('post_key').innerHTML;
     var password;
     console.log(key);
 
@@ -220,7 +220,7 @@ $(document).on('click', '#comment_btn', function(){
     var comment_input = document.getElementById('comment_input').value;
     var user_input = document.getElementById('comment_name').value;
     var password_input = document.getElementById('comment_password').value;
-    var key = document.getElementById('post_key').className;
+    var key = document.getElementById('post_key').innerHTML;
     var address = "text/" + key + "/Comments";
     console.log(key);
     if (comment_input == ""||user_input==''||password_input ==''){
@@ -273,17 +273,36 @@ $(document).on('click', '#comment_btn', function(){
 
 
 $(document).on('click','.delete_comment',function(){
-    var key=$(this).attr('value');
-    var commentkey=$(this).attr('id');
+    var table =document.getElementById("commentTable");
+    var row_index = $(this).closest('tr').index();
+    var key = document.getElementById("post_key").innerHTML;
+    var commentkey=$(this).attr('value');
+    //var commentkey=$(this).attr('id');
     var address="text/" + key + "/Comments";
-
     var ref=firebase.database().ref(address);
-    ref.child(commentkey).remove();
+    var alreadypw;
+    firebase.database().ref(address+"/"+commentkey).once('value',function(snapshot){
+        var dic = snapshot.val()
+        alreadypw = dic["Password"];
+    })    
+    var password = document.getElementById(commentkey).value;
+    if(password == alreadypw){
+        table.deleteRow(row_index);
+        ref.child(commentkey).remove();
+    }
+    else{
+        alert("wrong password!");
+    }
+    
+    
 
 
 
 });
-
+$(document).on('click', '#close', function(){
+    //alert("?");
+    $(".container.post").hide();
+})
 
 //when user click specific row, get data from firebase
 $.click_row=function(){
@@ -309,15 +328,7 @@ $.click_row=function(){
 
 
             if (comments == null){
-                var numRows = table.rows.length;
-                    for (var i = 0; i <numRows-1; i++) {
-                        table.deleteRow(1);
-                    }
-                var newRow = table.insertRow(1);
-                var newCell1 = newRow.insertCell(0);
-                newCell1.colSpan = 4;
-                newCell1.innerHTML = "No Entry to Show";
-                newCell1.style.textAlign = 'center';
+                
             }
             else{
                 var commentskey = Object.keys(comments); //코멘트들의 key array
@@ -329,20 +340,24 @@ $.click_row=function(){
                 for(var i =0;i<commentskey.length;i++) {
 
                     var deleteBtn = document.createElement("button");
+                    //var commentPW = document.createElement("input");
                     deleteBtn.innerHTML = "Delete";
                     deleteBtn.setAttribute('class','delete_comment');
-                    deleteBtn.setAttribute("value",key);
-                    deleteBtn.setAttribute("id",commentskey);
+                    //deleteBtn.setAttribute("value",key);
                     var mykey = commentskey[i];
+                    deleteBtn.setAttribute("value",mykey);
+                    
                     var newRow = table.insertRow(-1);
                     var newCell1 = newRow.insertCell(0);
                     var newCell2 = newRow.insertCell(1);
                     var newCell3 = newRow.insertCell(2);
                     var newCell4 = newRow.insertCell(3);
+                    var newCell5 = newRow.insertCell(4);
                     newCell1.innerHTML = comments[mykey]["Name"];
                     newCell2.innerHTML = comments[mykey]["Comment"];
                     newCell3.innerHTML = comments[mykey]["Date"];
                     newCell4.appendChild(deleteBtn);
+                    newCell5.innerHTML = "<input type ='password' id="+ mykey+ " style='width:calc(50%);' placeholder='password'>";
                 }
             }
             
@@ -352,7 +367,7 @@ $.click_row=function(){
             document.getElementById("post_content").innerHTML=content;
             document.getElementById("post_author").innerHTML=author;
             document.getElementById("post_date").innerHTML=date;
-            document.getElementById("post_key").className=key;
+            document.getElementById("post_key").innerHTML=key;
 
             $(".container.post").show();
             $("#posting_comment").show();
