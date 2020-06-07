@@ -11,7 +11,7 @@
     
   </head>
   <body>
-    <div style="position: absolute; left:3%;top:5%;font-size: 20px;"><i class="fas fa-leaf icon-4x" id="leaf_image"> Tea 3%</i></div>
+    <div style="position: absolute; left:3%;top:5%;font-size: 20px;cursor:pointer;" onClick = "location.href='main_page.html'"><i class="fas fa-leaf icon-4x" id="leaf_image"> Tea 3%</i></div>
     <div>
       <li id="top" height =200% style="list-style: none; margin-left: 22%;margin-bottom: 6%;">
         <table id="topmenu" style ="text-align:center;">
@@ -43,30 +43,38 @@
 
         <li><a href="#">Flavor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a>
           <ul class = subbar>
-            <li><a href="#" onclick = "addFilter('Sweat')">Sweat</a></li>
-            <li><a href="#" onclick = "addFilter('Sour')">Sour</a></li>
+            
+            
             <li><a href="#" onclick = "addFilter('bitter')">bitter</a></li>
             <li><a href="#" onclick = "addFilter('fruit')">fruit</a></li>
             <li><a href="#" onclick = "addFilter('Herb')">Herb</a></li>
             <li><a href="#" onclick = "addFilter('savory')">savory</a></li>
+            <li><a href="#" onclick = "addFilter('Sour')">Sour</a></li>
+            <li><a href="#" onclick = "addFilter('Sweat')">Sweat</a></li>
           </ul>
         </li>
         <li><a href="#"> Situation&nbsp;&nbsp;></a>
          
           <ul>
-            <li><a href="#" onclick = "addFilter('Rest')">Rest</a></li>
-            <li><a href="#" onclick = "addFilter('Sleep')">Sleep</a></li>
-            <li><a href="#" onclick = "addFilter('Sad')">Sad</a></li>
             <li><a href="#" onclick = "addFilter('Angry')">Angry</a></li>
+            <li><a href="#" onclick = "addFilter('Rest')">Rest</a></li>
+            <li><a href="#" onclick = "addFilter('Sad')">Sad</a></li>
+            <li><a href="#" onclick = "addFilter('Sleep')">Sleep</a></li>
+            <li><a href="#" onclick = "addFilter('Stressed')">Stressed</a></li>
+            
+            
           </ul>
         </li>
         <li><a href="#">Effect&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a>
           
           <ul>
             <li><a href="#" onclick = "addFilter('Cold')">Cold</a></li>
+            <li><a style = "font-size: 15px;"href="#" onclick = "addFilter('Concentration')">Concentration</a></li>
+            <li><a href="#" onclick = "addFilter('Fever')">Fever</a></li>
             <li><a href="#" onclick = "addFilter('Insomnia')">Insomnia</a></li>
             <li><a href="#" onclick = "addFilter('Indigestion')">Indigestion</a></li>
-            <li><a href="#" onclick = "addFilter('Fever')">Fever</a></li>
+            <li><a href="#" onclick = "addFilter('vitamin c')">Vitamin C</a></li>
+            
           </ul>
         </li>
       </ul>

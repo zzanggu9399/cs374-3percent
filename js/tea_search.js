@@ -2,6 +2,14 @@
 
 /*Variables */
 var tea_list = tea_information;
+tea_list.sort(function(a, b){
+    var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
+    if (nameA < nameB) //sort string ascending
+     return -1;
+    if (nameA > nameB)
+     return 1;
+    return 0; //default return value (no sorting)
+   });
 var filter_list = new Array();
 var tea_name_list = new Array();
 for (i=0;i < tea_list.length;i++){
@@ -63,6 +71,9 @@ function addFilter(filter_name){
     var div = document.createElement('div');
     div.className = "filter_block";
     div.innerHTML = filter_name.toUpperCase();
+    if(filter_name.length >= 10){
+        div.style.fontSize = '19px'
+    }
 
     if (filter_list.length == 0){
         ft.rows[0].deleteCell(0);
