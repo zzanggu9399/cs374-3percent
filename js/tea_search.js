@@ -239,8 +239,8 @@ function delCell(name){
             filter_list.splice(index,1)
         }
        
-        
+        loading("",false)
     }
-    loading("",false)
+    
     
 }
