@@ -1,23 +1,30 @@
 body {
-    background-color:white;
+    margin-top:2%;
+    background-color:white
 }
 *{
     font-family: 'Prompt', sans-serif;
 
 }
 .container{
-
     padding-bottom:10%;
 }
 li{
     list-style: none;
 }
+#leaf_image{
+    color:#BDD387;
+    font-size:50px;
+  }
 .menu_cell {
     list-style: none;  
     position: relative;  
     background: white;
     border-radius: 0.5rem;
-    box-shadow: inset 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.15); 
+    box-shadow: inset 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.15);
+    height:50px;
+    font-size: 25px;
+    user-select: none;
 }
 .menu_cell:hover {
     background-color: #eee;  
@@ -25,6 +32,7 @@ li{
 #topmenu{
     color:black;
     font-size:180%;
+    width:71%;
 }
 .row{
     margin-top:5%;

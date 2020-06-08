@@ -17,10 +17,34 @@ $('#prev').click(function(){
     $('#2table').hide();
     index--;
     $('#page_no').html("1/2");
+    $('#submit').html("NEXT");
     $('#1table').show();
     $('#prev').hide();
     $(location).removeAttr("href");
 })
+$('.MBTEAi_table td:nth-child(2)').on({
+    mouseover: function(){
+        $(this).css('background-color','#2EE59D');
+    },
+    mouseleave: function(){
+        $(this).css('background-color','rgba(0,0,0,0)');
+    },
+    click:function(){
+        $(this).off('mouseleave');
+    }
+});
+   
+$('.MBTEAi_table td:nth-child(3)').on({
+    mouseover: function(){
+        $(this).css('background-color','#2EE59D');
+    },
+    mouseleave: function(){
+        $(this).css('background-color','rgba(0,0,0,0)');
+    },
+    click:function(){
+        $(this).off('mouseleave');
+    }
+});
 
 $('.MBTEAi_table td').on('click', function(){
     var k = $(this).children('input');
@@ -31,12 +55,12 @@ $('.MBTEAi_table td').on('click', function(){
         var v = k.attr('value');
         $("input:radio[name=" + n +"]:radio[value=" + v + "]").prop("checked", true);
         if(v == 1){
-        $("input:radio[name=" + n +"]:radio[value=1]").parent('td').css("background", "red");
-        $("input:radio[name=" + n +"]:radio[value=2]").parent('td').css("background","#a5d194");
+        $("input:radio[name=" + n +"]:radio[value=1]").parent('td').css({"background-color":"#2EE59D"});
+        $("input:radio[name=" + n +"]:radio[value=2]").parent('td').css("background-color","rgba(0,0,0,0)");
         }
         else{
-            $("input:radio[name=" + n +"]:radio[value=2]").parent('td').css("background", "red");
-            $("input:radio[name=" + n +"]:radio[value=1]").parent('td').css("background","#a5d194");
+            $("input:radio[name=" + n +"]:radio[value=2]").parent('td').css("background-color", "#2EE59D");
+            $("input:radio[name=" + n +"]:radio[value=1]").parent('td').css("background-color","rgba(0,0,0,0)");
         }
     }
 })
