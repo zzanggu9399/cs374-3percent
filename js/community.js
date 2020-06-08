@@ -74,7 +74,8 @@ function printTable_type(myValue, keyList,tableid, category){
             var newCell5 = newRow.insertCell(4);
             var newCell6 = newRow.insertCell(5);
             newCell1.innerHTML = j;
-            newCell2.innerHTML = myValue[mykey].Category;
+            var category=myValue[mykey].Category;
+            newCell2.innerHTML = category.slice(4,category.length);
             newCell3.innerHTML = myValue[mykey].Title;
             newCell4.innerHTML = myValue[mykey].Author;
             newCell5.innerHTML = commentsCnt;
@@ -124,7 +125,8 @@ function printTable(tab_id) {
                 }
 
                 newCell1.innerHTML = i + 1;
-                newCell2.innerHTML = myValue[mykey].Category;
+                var category=myValue[mykey].Category;
+                newCell2.innerHTML = category.slice(4,category.length);
                 newRow.className = 'title1';
 
                 newCell3.innerHTML = myValue[mykey].Title;
@@ -251,13 +253,16 @@ $(document).on('click', '#comment_btn', function(){
         var newRow = table.insertRow(numRows);
         var newCell1 = newRow.insertCell(0);
         var newCell2 = newRow.insertCell(1);
+
         var newCell3 = newRow.insertCell(2);
         var newCell4 = newRow.insertCell(3);
         var newCell5 = newRow.insertCell(4);
         
         newCell1.innerHTML = "<i class='fa fa-user' aria-hidden='true'></i>" + user_input;
         newCell1.style.fontWeight="bold";
+        /*newCell2.style.borderLeft="1px solid black";*/
         newCell2.innerHTML = '|\u0020'+comment_input;
+        newCell2.style.width="250px";
         newCell3.innerHTML = date;
         newCell4.appendChild(deleteBtn);
         newCell5.innerHTML = "<input type ='password' id="+ commentkey + " style='width:calc(50%);' placeholder='password'>";
@@ -355,12 +360,15 @@ $.click_row=function(){
                     var newRow = table.insertRow(-1);
                     var newCell1 = newRow.insertCell(0);
                     var newCell2 = newRow.insertCell(1);
+
                     var newCell3 = newRow.insertCell(2);
                     var newCell4 = newRow.insertCell(3);
                     var newCell5 = newRow.insertCell(4);
                     newCell1.innerHTML = "<i class='fa fa-user' aria-hidden='true'></i>  " + comments[mykey]["Name"];
                     newCell1.style.fontWeight="bold";
+                    /*newCell2.style.borderLeft="1px solid black";*/
                     newCell2.innerHTML = '|\u0020'+comments[mykey]["Comment"];
+                    newCell2.style.width="250px";
                     newCell3.innerHTML = comments[mykey]["Date"];
                     newCell4.appendChild(deleteBtn);
                     newCell5.innerHTML = "<input type ='password' id="+ mykey+ " style='width:calc(50%);' placeholder='password'>";

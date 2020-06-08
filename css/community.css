@@ -116,3 +116,7 @@ ul.tabs li.current{
 td{
     padding:5px;
 }
+
+.comment_td{
+    width:80px;
+}
