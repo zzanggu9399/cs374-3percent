@@ -120,3 +120,14 @@ td{
 .comment_td{
     width:80px;
 }
+
+
+
+.post_button{
+    width:100px;
+    height:40px;
+    font-size:15pt;
+    border:none;
+    background-color: yellowgreen;
+    color:white;
+}

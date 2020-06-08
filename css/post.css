@@ -1,5 +1,5 @@
 body{
-    font-family: 'Prompt', sans-serif;
+    font-family: -apple-system, "Segoe UI";
     height:100%;
     margin-top: 2%;
 
@@ -154,6 +154,7 @@ button{
 }
 
 .post{
+
     background-color: yellowgreen;
     color:white;
 }
