@@ -253,16 +253,20 @@ $(document).on('click', '#comment_btn', function(){
         var newCell2 = newRow.insertCell(1);
         var newCell3 = newRow.insertCell(2);
         var newCell4 = newRow.insertCell(3);
-        newCell1.innerHTML = user_input;
+        var newCell5 = newRow.insertCell(4);
+        
+        newCell1.innerHTML = "<i class='fa fa-user' aria-hidden='true'></i>" + user_input;
         newCell1.style.fontWeight="bold";
         newCell2.innerHTML = '|\u0020'+comment_input;
         newCell3.innerHTML = date;
         newCell4.appendChild(deleteBtn);
+        newCell5.innerHTML = "<input type ='password' id="+ commentkey + " style='width:calc(50%);' placeholder='password'>";
+
         deleteBtn.setAttribute('class','delete_comment');
-        deleteBtn.setAttribute("value",key);
-        deleteBtn.setAttribute("id",commentkey);
+        deleteBtn.setAttribute("value",commentkey);
+        //deleteBtn.setAttribute("id",commentkey);
         console.log(deleteBtn.value);
-        console.log(deleteBtn.id);
+        //console.log(deleteBtn.id);
         document.getElementById('comment_input').value = '';
 
     }
@@ -342,7 +346,7 @@ $.click_row=function(){
 
                     var deleteBtn = document.createElement("button");
                     //var commentPW = document.createElement("input");
-                    deleteBtn.innerHTML = "Delete";
+                    deleteBtn.innerHTML = "<i class='fa fa-trash' aria-hidden='true'></i>";
                     deleteBtn.setAttribute('class','delete_comment');
                     //deleteBtn.setAttribute("value",key);
                     var mykey = commentskey[i];
@@ -354,7 +358,7 @@ $.click_row=function(){
                     var newCell3 = newRow.insertCell(2);
                     var newCell4 = newRow.insertCell(3);
                     var newCell5 = newRow.insertCell(4);
-                    newCell1.innerHTML = comments[mykey]["Name"];
+                    newCell1.innerHTML = "<i class='fa fa-user' aria-hidden='true'></i>  " + comments[mykey]["Name"];
                     newCell1.style.fontWeight="bold";
                     newCell2.innerHTML = '|\u0020'+comments[mykey]["Comment"];
                     newCell3.innerHTML = comments[mykey]["Date"];
@@ -365,7 +369,7 @@ $.click_row=function(){
             
             // get data 까지 구현완료
             console.log(title);
-            document.getElementById("post_title").innerHTML=title;
+            document.getElementById("post_title").innerHTML="<span style =color:green><i class='fa fa-leaf' aria-hidden='true'></i>  </span>" + title;
             document.getElementById("post_content").innerHTML=content;
             document.getElementById("post_author").innerHTML='['+author+']';
             document.getElementById("post_date").innerHTML=date;
@@ -395,7 +399,7 @@ $.click_row=function(){
     $.click_row();
 
     $('.tabs li').click(function(){
-
+        $(".container.post").hide();
         var tab_id = $(this).attr('data-tab');
         console.log(tab_id);
         $('ul.tabs li').removeClass('current');

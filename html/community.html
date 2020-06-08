@@ -40,7 +40,7 @@
       <ul class="tabs">
         <li class="tab-link current" data-tab="tab-1">All</li>
         <li class="tab-link" data-tab="tab-2">Stressed</li>
-        <li class="tab-link" data-tab="tab-3">Sleep Well</li>
+        <li class="tab-link" data-tab="tab-3"><i class="fa fa-bed" aria-hidden="true"></i> Sleep Well</li>
         <li class="tab-link" data-tab="tab-4">Relax</li>
         <li class="tab-link" data-tab="tab-5">Casually</li>
       </ul>
@@ -50,8 +50,8 @@
       <div class="wrapper_title">
         <div id="post_title"style = "float: left;"></div>
         <div id = "close" style = "float: right; padding-left:5px;"><i class="fa fa-times-circle" aria-hidden="true" ></i></div>
-        <div id="check_password" style = "float: right; padding-left:5px;"><input type="text" id="delete_password" ></div>
-        <div id="delete_article" style = "float: right;"><input type="button" id="delete_post" value="Delete"></div>
+        <div id="check_password" style = "float: right; padding-left:5px;"><input type="password" id="delete_password" placeholder="password" ></div>
+        <div id="delete_article" style = "float: right;"><button type="button" id="delete_post" value="Delete"><i class="fa fa-trash" aria-hidden="true"></i></button></div>
       </div>
       <div id="post_author" style="float:left;"></div>
       <div id="post_date"></div>
@@ -60,13 +60,13 @@
         <input type ="text" id="comment_input" style="width:calc(40%);" placeholder="write good reply">
         <input type ="text" id="comment_name" style="width:calc(10%);" placeholder="name">
         <input type ="password" id="comment_password" style="width:calc(10%);" placeholder="password">
-        <input type="button" id="comment_btn" value="Reply">
+        <button type="button" id="comment_btn" value="Reply"><i class="fa fa-reply" aria-hidden="true"></i></button>
       </div>
       <div id="post_comment">
         <table id = "commentTable">
         <thread>
           <tr>
-            <th colspan="4">댓글</th>
+            <th colspan="4"><i class="fa fa-comments" aria-hidden="true"></i> Comments</th>
           </tr>
         </thread>
       </table>
@@ -78,12 +78,12 @@
         <table id= "table_all" class="table table-hover">
           <thread>
             <tr>
-              <th>번호</th>
-              <th>카테고리</th>
-              <th>제목</th>
-              <th>작성자</th>
-              <th>댓글수</th>
-              <th>날짜</th>
+              <th>#article</th>
+              <th>Category</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>#reply</th>
+              <th>Date</th>
             </tr>
           </thread>
           <tbody>
@@ -98,12 +98,12 @@
         <table id= "table_stressed" class="table table-hover">
           <thread>
             <tr>
-              <th>번호</th>
-              <th>카테고리</th>
-              <th>제목</th>
-              <th>작성자</th>
-              <th>댓글수</th>
-              <th>날짜</th>
+              <th>#article</th>
+              <th>Category</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>#reply</th>
+              <th>Date</th>
             </tr>
           </thread>
           <tbody>
@@ -117,12 +117,12 @@
         <table id= "table_sleepwell" class="table table-hover">
           <thread>
             <tr>
-              <th>번호</th>
-              <th>카테고리</th>
-              <th>제목</th>
-              <th>작성자</th>
-              <th>댓글수</th>
-              <th>날짜</th>
+              <th>#article</th>
+              <th>Category</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>#reply</th>
+              <th>Date</th>
             </tr>
           </thread>
           <tbody>
@@ -136,12 +136,12 @@
         <table id= "table_relax" class="table table-hover">
           <thread>
             <tr>
-              <th>번호</th>
-              <th>카테고리</th>
-              <th>제목</th>
-              <th>작성자</th>
-              <th>댓글수</th>
-              <th>날짜</th>
+              <th>#article</th>
+              <th>Category</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>#reply</th>
+              <th>Date</th>
             </tr>
           </thread>
           <tbody>
@@ -155,12 +155,12 @@
         <table id= "table_casually" class="table table-hover">
           <thread>
             <tr>
-              <th>번호</th>
-              <th>카테고리</th>
-              <th>제목</th>
-              <th>작성자</th>
-              <th>댓글수</th>
-              <th>날짜</th>
+              <th>#article</th>
+              <th>Category</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>#reply</th>
+              <th>Date</th>
             </tr>
           </thread>
           <tbody>
