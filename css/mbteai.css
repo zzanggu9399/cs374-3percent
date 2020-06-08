@@ -1,6 +1,6 @@
 body {
     background-color:white;
-    font-family: 'Prompt', sans-serif;
+    font-family: '-apple-system', 'Segoe UI';
     margin-top:2%;
 }
 #leaf_image{
@@ -9,6 +9,7 @@ body {
   }
 li{
     list-style: none;
+    display:block;
 }
 .menu_cell {
     list-style: none;  
@@ -23,11 +24,11 @@ li{
 .menu_cell:hover {
     background-color: #eee;  
 }
-#topmenu{
-    color:black;
-    font-size:180%;
+#topmenu td{
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
 }
-
 
 #first{
     display:flex;
@@ -52,7 +53,6 @@ li{
 }
 
 #MBTEAi table{
-
     margin-bottom:5%;
     width:100%;
 }

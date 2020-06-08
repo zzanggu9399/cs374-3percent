@@ -57,10 +57,17 @@ $('.MBTEAi_table td').on('click', function(){
         if(v == 1){
         $("input:radio[name=" + n +"]:radio[value=1]").parent('td').css({"background-color":"#2EE59D"});
         $("input:radio[name=" + n +"]:radio[value=2]").parent('td').css("background-color","rgba(0,0,0,0)");
+        $("input:radio[name=" + n +"]:radio[value=2]").parent('td').on('mouseleave',function(){
+                $(this).css('background-color','rgba(0,0,0,0)');
+        });
+
         }
         else{
             $("input:radio[name=" + n +"]:radio[value=2]").parent('td').css("background-color", "#2EE59D");
             $("input:radio[name=" + n +"]:radio[value=1]").parent('td').css("background-color","rgba(0,0,0,0)");
+            $("input:radio[name=" + n +"]:radio[value=1]").parent('td').on('mouseleave',function(){
+                $(this).css('background-color','rgba(0,0,0,0)');
+        });
         }
     }
 })
