@@ -253,8 +253,9 @@ $(document).on('click', '#comment_btn', function(){
         var newCell2 = newRow.insertCell(1);
         var newCell3 = newRow.insertCell(2);
         var newCell4 = newRow.insertCell(3);
-        newCell2.innerHTML = "User:"+user_input;
-        newCell1.innerHTML = comment_input;
+        newCell1.innerHTML = user_input;
+        newCell1.style.fontWeight="bold";
+        newCell2.innerHTML = '|\u0020'+comment_input;
         newCell3.innerHTML = date;
         newCell4.appendChild(deleteBtn);
         deleteBtn.setAttribute('class','delete_comment');
@@ -353,8 +354,9 @@ $.click_row=function(){
                     var newCell3 = newRow.insertCell(2);
                     var newCell4 = newRow.insertCell(3);
                     var newCell5 = newRow.insertCell(4);
-                    newCell2.innerHTML = "User:"+comments[mykey]["Name"];
-                    newCell1.innerHTML = comments[mykey]["Comment"];
+                    newCell1.innerHTML = comments[mykey]["Name"];
+                    newCell1.style.fontWeight="bold";
+                    newCell2.innerHTML = '|\u0020'+comments[mykey]["Comment"];
                     newCell3.innerHTML = comments[mykey]["Date"];
                     newCell4.appendChild(deleteBtn);
                     newCell5.innerHTML = "<input type ='password' id="+ mykey+ " style='width:calc(50%);' placeholder='password'>";
@@ -365,7 +367,7 @@ $.click_row=function(){
             console.log(title);
             document.getElementById("post_title").innerHTML=title;
             document.getElementById("post_content").innerHTML=content;
-            document.getElementById("post_author").innerHTML=author;
+            document.getElementById("post_author").innerHTML='['+author+']';
             document.getElementById("post_date").innerHTML=date;
             document.getElementById("post_key").innerHTML=key;
 
