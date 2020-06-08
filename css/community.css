@@ -61,20 +61,44 @@ ul.tabs li.current{
 }
 
 .post_title_style{
-    font-size:20pt;
-    background-color: lightgray;
+    font-size:22pt;
+    
+    font-weight: bolder;
 }
 
 .post_content_style{
     margin-top: 10px;
+    margin-bottom: 10px;
     font-size:15pt;
+
+    border :1.5px solid darkgrey;
+    height:200px;
+}
+
+.fa-times-circle{
+    font-size:25px;
+    padding:0px;
+    margin:0px;
+}
+
+.wrapper_title_style{
+    padding-right:3px;
+    border-bottom: 1.5px solid darkgrey;
+    height:50px;
+}
+.post_comment_style{
+    margin-top:8px;
+    padding-top:8px;
+    border-top :1.5px solid darkgrey;
+    height:200px;
 }
 
 .container_post_style{
     overflow: auto;
     height:auto;
     margin-bottom: 10px;
-    border: 1px solid yellowgreen;
+    padding:5px;
+    border: 2px solid yellowgreen;
 
 }
 .container.post{
@@ -82,5 +106,9 @@ ul.tabs li.current{
 }
 
 .delete_comment{
+    border:1px solid black;
+}
 
+td{
+    padding:5px;
 }
