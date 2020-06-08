@@ -80,20 +80,22 @@ function addFilter(filter_name){
         ft.rows[0].deleteCell(0);
         ft.rows[0].insertCell(0);
         ft.rows[0].cells[0].appendChild(div);
-        ft.rows[0].cells[0].setAttribute("onClick","delCell(0,0,'filter_name')")
+        ft.rows[0].cells[0].addEventListener('click',function(){delCell(filter_name)},false )
     }
     else{
         if(filter_list.length < Math.floor(max_num/2)){
             var idx = filter_list.length;
             ft.rows[0].insertCell(idx);
             ft.rows[0].cells[idx].appendChild(div);
-            ft.rows[0].cells[idx].setAttribute("onClick","delCell(0,'idx','filter_name')")
+
+            ft.rows[0].cells[idx].addEventListener('click',function(){delCell(filter_name)},false )
         }
         else{
             var idx = filter_list.length-Math.floor(max_num/2);
             ft.rows[1].insertCell(idx);
             ft.rows[1].cells[idx].appendChild(div);
-            ft.rows[1].cells[idx].setAttribute("onClick","delCell(1,'idx','filter_name')")
+            idx = String(idx)
+            ft.rows[1].cells[idx].addEventListener('click',function(){delCell(filter_name)},false )
         }
     }
     filter_list[filter_list.length] =  filter_name.toLowerCase();
@@ -206,13 +208,38 @@ function searchTea(){
     
 }
 
-function delCell(row,cell,name){
+function delCell(name){
+    var index = filter_list.indexOf(name.toLowerCase());
+    var box_width = document.getElementById('filterBox').offsetWidth
+    var block_width = 200;
+    var max_num = 2 * Math.floor( box_width/block_width );
     if(filter_list.length == 1)
         filterReset();
     else{
-        document.getElementById("filter_table").rows[row].deleteCell(cell);
-        var idx = filter_list.indexOf(name.toLowerCase());
-        filter_list.splice(idx,1)
+        var row = 0;
+        var cell = 0;
+        if(index < Math.floor(max_num/2)){
+            row = 0;
+            cell = index;
+        }
+        else{
+            row = 1;
+            cell = index - Math.floor(max_num/2);
+        }
+        if(filter_list.length > Math.floor(max_num/2) && index< Math.floor(max_num/2)){   
+            var filter_temp = filter_list
+            filterReset();
+            filter_temp.splice(index,1)
+            for (i=0; i<filter_temp.length;i++){
+                addFilter(filter_temp[i])
+            }
+        }
+        else{
+            document.getElementById("filter_table").rows[row].deleteCell(cell);
+            filter_list.splice(index,1)
+        }
+       
+        
     }
     loading("",false)
     
