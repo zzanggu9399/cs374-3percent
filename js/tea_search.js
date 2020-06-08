@@ -71,6 +71,7 @@ function addFilter(filter_name){
     var div = document.createElement('div');
     div.className = "filter_block";
     div.innerHTML = filter_name.toUpperCase();
+
     if(filter_name.length >= 10){
         div.style.fontSize = '19px'
     }
@@ -79,17 +80,20 @@ function addFilter(filter_name){
         ft.rows[0].deleteCell(0);
         ft.rows[0].insertCell(0);
         ft.rows[0].cells[0].appendChild(div);
+        ft.rows[0].cells[0].setAttribute("onClick","delCell(0,0,'filter_name')")
     }
     else{
         if(filter_list.length < Math.floor(max_num/2)){
             var idx = filter_list.length;
             ft.rows[0].insertCell(idx);
             ft.rows[0].cells[idx].appendChild(div);
+            ft.rows[0].cells[idx].setAttribute("onClick","delCell(0,'idx','filter_name')")
         }
         else{
             var idx = filter_list.length-Math.floor(max_num/2);
             ft.rows[1].insertCell(idx);
             ft.rows[1].cells[idx].appendChild(div);
+            ft.rows[1].cells[idx].setAttribute("onClick","delCell(1,'idx','filter_name')")
         }
     }
     filter_list[filter_list.length] =  filter_name.toLowerCase();
@@ -199,5 +203,17 @@ function searchTea(){
     var input = document.getElementById('name');
     if (input.value == "" || input.value.replace(/\s/g, '') == "") return;
     loading(input.value.toLowerCase(),false);
+    
+}
+
+function delCell(row,cell,name){
+    if(filter_list.length == 1)
+        filterReset();
+    else{
+        document.getElementById("filter_table").rows[row].deleteCell(cell);
+        var idx = filter_list.indexOf(name.toLowerCase());
+        filter_list.splice(idx,1)
+    }
+    loading("",false)
     
 }

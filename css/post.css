@@ -1,6 +1,7 @@
-html,body{
+body{
     font-family: 'Prompt', sans-serif;
     height:100%;
+    margin-top: 2%;
 
 }
 
@@ -9,11 +10,6 @@ textarea{
     width: calc(100% - 10px);
 }
 
-li{
-    list-style: none;
-}
-
-
 
 
 category{
@@ -21,23 +17,28 @@ category{
     margin-right: calc(3%);
 }
 
-#top{
-    background: #386129;
-    margin:1%;
-}
-#topmenu{
-    color:#EFFFE9;
-    font-size:180%;
+#leaf_image{
+  color:#BDD387;
+  font-size:50px;
 }
 
-#now{
-    color: #386129;
-    font-size:110%;
+.menu_cell {
+    list-style: none;
+    position: relative;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: inset 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.15);
+    height:50px;
+    font-size: 25px
+}
+.menu_cell:hover {
+    background-color: #eee;
 }
 
-.menu_cell{
-    padding-right: 0.5%;
-    padding-left: 0.5%;
+#topmenu td {
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
 }
 
 
@@ -92,6 +93,7 @@ category{
     border-bottom: 3px solid darkgrey;
     padding-top: 7px;
     padding-bottom: 7px;
+    margin-bottom:3px;
 }
 .text_area{
     margin-bottom: 10px;
