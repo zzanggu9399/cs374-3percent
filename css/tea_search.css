@@ -131,6 +131,10 @@ td {
     font-size: 25px;
     
 }
+.filter_block:hover {
+  background-color: #eee;
+  cursor: url(../images/trash-alt-regular.svg), auto;
+}
 
 #teaname {
     width: 50%;

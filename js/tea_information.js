@@ -55,7 +55,7 @@ tea_information = [
     },
     {
         name: "Chamomile tea",
-        src: "https://lh3.googleusercontent.com/proxy/XRtc-SCA3vucThLgii_WMfWEDL_uB6nERAhIA-HWJwBVlD-EyAY2KYplyrzAfvFaBrXD4gtmWToCl2On9mGYhy4VMnLFa8Jfim8Kh4zzbpyC",
+        src: "https://img.mimint.co.kr/story/bbs/2019/7/16/20190716192639_bevjhamj.JPG",
         tag: ['indigestion','stressed','insomnia','herb','fruit','bitter'],
         info: ""
     },
