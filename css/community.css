@@ -1,30 +1,34 @@
 body,html{
     height:100%;
     font-family: 'Prompt', sans-serif;
+    margin-top: 2%;
 }
 
 
-li{
+
+
+#leaf_image{
+  color:#BDD387;
+  font-size:50px;
+}
+
+.menu_cell {
     list-style: none;
+    position: relative;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: inset 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.15);
+    height:50px;
+    font-size: 25px
+}
+.menu_cell:hover {
+    background-color: #eee;
 }
 
-#top{
-    background: #386129;
-    margin:1%;
-}
-#topmenu{
-    color:#EFFFE9;
-    font-size:180%;
-}
-
-#now{
-    color: #386129;
-    font-size:110%;
-}
-
-.menu_cell{
-    padding-right: 0.5%;
-    padding-left: 0.5%;
+#topmenu td {
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
 }
 
 ul.tabs li{
@@ -36,8 +40,8 @@ ul.tabs li{
 }
 
 ul.tabs li.current{
-    color:yellowgreen;
-    background-color: white ;
+    color:white;
+    background-color: yellowgreen ;
 }
 
 .tab-content{
@@ -62,7 +66,7 @@ ul.tabs li.current{
 
 .post_title_style{
     font-size:22pt;
-    
+
     font-weight: bolder;
 }
 
