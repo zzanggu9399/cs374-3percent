@@ -248,7 +248,7 @@ $(document).on('click', '#comment_btn', function(){
         var table =document.getElementById("commentTable");
         var numRows = table.rows.length;
         var deleteBtn = document.createElement("button");
-        deleteBtn.innerHTML = "Delete";
+        deleteBtn.innerHTML = "<i class='fa fa-trash' aria-hidden='true'></i></button>";
 
         var newRow = table.insertRow(numRows);
         var newCell1 = newRow.insertCell(0);
