@@ -3,6 +3,10 @@ var index; //for test page
 var E,S,T,J;
 
 $(document).ready(function(){
+
+
+        
+    console.log($('input:radio[name=q1]').is('checked'));
     $('#before i').hide();
     $('#prev').hide();
     index = 1;
@@ -22,7 +26,7 @@ $('#prev').click(function(){
     $('#prev').hide();
     $(location).removeAttr("href");
 })
-$('.MBTEAi_table td:nth-child(2)').on({
+$('.MBTEAi_table tr.Answer td:nth-child(2)').on({
     mouseover: function(){
         $(this).css('background-color','#D3F1D2;');
     },
@@ -34,7 +38,7 @@ $('.MBTEAi_table td:nth-child(2)').on({
     }
 });
    
-$('.MBTEAi_table td:nth-child(3)').on({
+$('.MBTEAi_table tr.Answer td:nth-child(4)').on({
     mouseover: function(){
         $(this).css('background-color','#D3F1D2;');
     },
@@ -46,8 +50,11 @@ $('.MBTEAi_table td:nth-child(3)').on({
     }
 });
 
-$('.MBTEAi_table td').on('click', function(){
+$('.MBTEAi_table tr.Answer td').on('click', function(){
     var k = $(this).children('input');
+    console.log(k);
+    console.log(k.attr('value'));
+
     if(k != null){
         //k = k.children('input');
         //console.log(k);
@@ -86,7 +93,7 @@ $('#submit').click(function(){
 
     }
     else{
-        var l = []
+        var l = [];
           var branch = true;
         for(var i = 1 ; i<21 ; i++){
             if(! $('input:radio[name=q'+i+']').is(':checked')){// if not checked
@@ -95,19 +102,36 @@ $('#submit').click(function(){
             }
         }
         if(branch){
-            
+            E = $('.E:radio:checked').length;
+            S = $('.S:radio:checked').length;
+            T = $('.T:radio:checked').length;
+            J = $('.J:radio:checked').length;
+            for(var i = 1 ; i<21 ; i++){
+                $('input:radio[name=q'+i+']').removeAttr('checked');
+            }
+            $(location).attr("href",'mbteai_result.html?'+E+S+T+J);
+            //$(location).attr("href",'mbteai_result.html?3333'); //for presentation
         }
         else{
             alert('You have not answered Question '+l+' yet');
+            var min = l[0];
+            if(min<11){
+                $('#1table').show();
+                $('#2table').hide();
+                $('#prev').hide();
+                $('#submit').html("NEXT");
+                $('#page_no').html("1/2");
+                index--;
+                var mov = $('input:radio[name=q'+min+']').position().top;
+                $('html, body').animate({scrollTop:mov},150);
+            }
+            else{
+                var mov = $('input:radio[name=q'+min+']').position().top;
+                $('html, body').animate({scrollTop:mov},150);
+            }
         }
 
-        E = $('.E:radio:checked').length;
-        S = $('.S:radio:checked').length;
-        T = $('.T:radio:checked').length;
-        J = $('.J:radio:checked').length;
 
-        //$(location).attr("href",'mbteai_result.html?'+E+S+T+J);
-        $(location).attr("href",'mbteai_result.html?3333');
         
 
         

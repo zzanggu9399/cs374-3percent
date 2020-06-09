@@ -54,9 +54,10 @@ li{
 
 #MBTEAi table{
     margin-bottom:5%;
+
     width:100%;
 }
-
+/*
 #MBTEAi table tbody tr td:nth-child(1){
     width:1%;
 }
@@ -68,9 +69,23 @@ li{
     border-radius: 0.3rem;
     user-select: none;
 }
-
-
-
+*/
+.Question tr{
+    text-align:left;
+    
+}
+.Question td{
+    padding-left:5%;
+    width:100%;
+}
+.Question td span{
+    color:#b31614;
+    font-weight:bold;
+}
+.Answer td{
+    text-align: center;
+    width:20%;
+}
 #second{
     display:flex;
     background: white;
@@ -80,18 +95,49 @@ li{
 .MBTEAi_table{
     border-top:2px solid gray;
     padding-top:2%;
-    width:100%;
     font-size:160%;
-    empty-cells: hide;
     border-spacing:5px;
 }
+.MBTEAi_table tbody{
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    width:70%;
+}
 .blank{
-    height:30px;
+    margin-top:40px;
+    border-top:3px solid #d3d3d3;
+    height:40px;
 }
 
 .MBTEAi_table tbody tr{
-    padding:1%;
+    width:100%;
+    display:block;
+}
+.MBTEAi_table tbody tr.Question{
+    margin-bottom:1%;
+}
+.MBTEAi_table tbody tr.Question td{
+    width:100%;
+    display:block;
+}
+.MBTEAi_table tbody tr.Answer{
+    width:100%;
+    display:inline-block;
+}
+.MBTEAi_table tbody tr.Answer td{
+    width:20%;
+    display:inline-block;
+}
 
+.Question tr{
+    width:100%;
+}
+
+.MBTEAi_table tbody tr.Answer td:nth-child(2), .MBTEAi_table tbody tr.Answer td:nth-child(4){
+    text-align:center;
+    border:1px solid black;
+    border-radius: 4px;
 }
 
 #middle{
@@ -111,9 +157,7 @@ li{
     height:0;
 }
 
-.first_cell{
-    font-size:120%;
-}
+
 #page_no{
     position: absolute;
     bottom:0;
@@ -163,11 +207,14 @@ li{
     height:0;
     width:0;
 }
+
 #middle table tbody tr td label{
+    padding-top:5px;
+    padding-bottom:5px;
+
     display:inline-block;
     width:100%;
     text-align:center;
-    padding:5px;
     cursor: pointer;
 }
 
