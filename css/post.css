@@ -99,7 +99,9 @@ category{
     margin-bottom: 10px;
     border-bottom: 3px solid yellowgreen;
 }
-
+.form-control{
+    font-family: -apple-system, "Segoe UI";
+}
 
 /*
 button{
