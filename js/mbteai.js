@@ -80,6 +80,8 @@ $('#submit').click(function(){
         $('#prev').show();
         $('#submit').html("SUBMIT");
         $('#page_no').html("2/2");
+        var move = $('.mbteai_table').position().top-100;
+        $('html, body').animate({scrollTop:move},150);
 
     }
     else{
