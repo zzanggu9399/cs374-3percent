@@ -17,6 +17,11 @@ body {
 li{
     list-style: none;
 }
+#topmenu td{
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+}
 #leaf_image{
     color:#BDD387;
     font-size:50px;

@@ -24,7 +24,7 @@ $('#prev').click(function(){
 })
 $('.MBTEAi_table td:nth-child(2)').on({
     mouseover: function(){
-        $(this).css('background-color','#2EE59D');
+        $(this).css('background-color','#D3F1D2;');
     },
     mouseleave: function(){
         $(this).css('background-color','rgba(0,0,0,0)');
@@ -36,7 +36,7 @@ $('.MBTEAi_table td:nth-child(2)').on({
    
 $('.MBTEAi_table td:nth-child(3)').on({
     mouseover: function(){
-        $(this).css('background-color','#2EE59D');
+        $(this).css('background-color','#D3F1D2;');
     },
     mouseleave: function(){
         $(this).css('background-color','rgba(0,0,0,0)');
@@ -55,7 +55,7 @@ $('.MBTEAi_table td').on('click', function(){
         var v = k.attr('value');
         $("input:radio[name=" + n +"]:radio[value=" + v + "]").prop("checked", true);
         if(v == 1){
-        $("input:radio[name=" + n +"]:radio[value=1]").parent('td').css({"background-color":"#2EE59D"});
+        $("input:radio[name=" + n +"]:radio[value=1]").parent('td').css({"background-color":"#D3F1D2;"});
         $("input:radio[name=" + n +"]:radio[value=2]").parent('td').css("background-color","rgba(0,0,0,0)");
         $("input:radio[name=" + n +"]:radio[value=2]").parent('td').on('mouseleave',function(){
                 $(this).css('background-color','rgba(0,0,0,0)');
@@ -63,7 +63,7 @@ $('.MBTEAi_table td').on('click', function(){
 
         }
         else{
-            $("input:radio[name=" + n +"]:radio[value=2]").parent('td').css("background-color", "#2EE59D");
+            $("input:radio[name=" + n +"]:radio[value=2]").parent('td').css("background-color", "#D3F1D2;");
             $("input:radio[name=" + n +"]:radio[value=1]").parent('td').css("background-color","rgba(0,0,0,0)");
             $("input:radio[name=" + n +"]:radio[value=1]").parent('td').on('mouseleave',function(){
                 $(this).css('background-color','rgba(0,0,0,0)');
@@ -91,6 +91,13 @@ $('#submit').click(function(){
                 l.push(i+" ");
             }
         }
+        if(branch){
+            
+        }
+        else{
+            alert('You have not answered Question '+l+' yet');
+        }
+
         E = $('.E:radio:checked').length;
         S = $('.S:radio:checked').length;
         T = $('.T:radio:checked').length;
@@ -100,14 +107,9 @@ $('#submit').click(function(){
         $(location).attr("href",'mbteai_result.html?3333');
         
 
-        /*
-        if(branch){
-            
-        }
-        else{
-            alert('You have not answered Question '+l+' yet');
-        }
-        */
+        
+
+        
     }
 
 
