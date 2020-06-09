@@ -4,9 +4,7 @@ var E,S,T,J;
 
 $(document).ready(function(){
 
-    for(var i = 1 ; i<21 ; i++){
-        $('input:radio[name=q'+i+']').removeAttr('checked');
-    }
+
         
     console.log($('input:radio[name=q1]').is('checked'));
     $('#before i').hide();
@@ -104,19 +102,36 @@ $('#submit').click(function(){
             }
         }
         if(branch){
-            
+            E = $('.E:radio:checked').length;
+            S = $('.S:radio:checked').length;
+            T = $('.T:radio:checked').length;
+            J = $('.J:radio:checked').length;
+            for(var i = 1 ; i<21 ; i++){
+                $('input:radio[name=q'+i+']').removeAttr('checked');
+            }
+            $(location).attr("href",'mbteai_result.html?'+E+S+T+J);
+            //$(location).attr("href",'mbteai_result.html?3333'); //for presentation
         }
         else{
             alert('You have not answered Question '+l+' yet');
+            var min = l[0];
+            if(min<11){
+                $('#1table').show();
+                $('#2table').hide();
+                $('#prev').hide();
+                $('#submit').html("NEXT");
+                $('#page_no').html("1/2");
+                index--;
+                var mov = $('input:radio[name=q'+min+']').position().top;
+                $('html, body').animate({scrollTop:mov},150);
+            }
+            else{
+                var mov = $('input:radio[name=q'+min+']').position().top;
+                $('html, body').animate({scrollTop:mov},150);
+            }
         }
 
-        E = $('.E:radio:checked').length;
-        S = $('.S:radio:checked').length;
-        T = $('.T:radio:checked').length;
-        J = $('.J:radio:checked').length;
 
-        //$(location).attr("href",'mbteai_result.html?'+E+S+T+J);
-        $(location).attr("href",'mbteai_result.html?3333');
         
 
         

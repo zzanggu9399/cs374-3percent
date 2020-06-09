@@ -43,7 +43,7 @@ function whatIsMBTI(a,b,c,d){
 
 }
 function focusON(focus){
-    $('#'+focus).css('border','3px solid red');
+    $('#'+focus).css('border','4px solid red');
     var move = $('#'+focus).position().top-200;
     $('html, body').animate({scrollTop:move},100);
 }
