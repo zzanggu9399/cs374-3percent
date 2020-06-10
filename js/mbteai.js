@@ -3,10 +3,6 @@ var index; //for test page
 var E,S,T,J;
 
 $(document).ready(function(){
-
-
-        
-    console.log($('input:radio[name=q1]').is('checked'));
     $('#before i').hide();
     $('#prev').hide();
     index = 1;
@@ -52,8 +48,6 @@ $('.MBTEAi_table tr.Answer td:nth-child(4)').on({
 
 $('.MBTEAi_table tr.Answer td').on('click', function(){
     var k = $(this).children('input');
-    console.log(k);
-    console.log(k.attr('value'));
 
     if(k != null){
         //k = k.children('input');
@@ -88,7 +82,7 @@ $('#submit').click(function(){
         $('#submit').html("SUBMIT");
         $('#page_no').html("2/2");
         var move = $('#MBTEAi').position().top-50;
-        console.log(move);
+        //console.log(move);
         $('html, body').animate({scrollTop:move},150);
 
     }
