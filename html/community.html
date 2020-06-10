@@ -45,6 +45,7 @@
         <li class="tab-link" data-tab="tab-5">Casually</li>
       </ul>
     </div>
+    
     <div class="container post" id="container_post" style="display: none;">
       <div id="post_key" style="display:none;"></div>
       <div class="wrapper_title">
@@ -57,7 +58,7 @@
       <div id="post_date"></div>
       <div id="post_content"></div>
       <div id="posting_comment" style="display: none;">
-        <input type ="text" id="answer_input" style="width:calc(20%);" placeholder="Answer">
+        <input type ="text" id="answer_input" style="width:calc(20%);" placeholder="Tea recommend">
         <input type ="text" id="comment_input" style="width:calc(40%);" placeholder="write good reply">
         <input type ="text" id="comment_name" style="width:calc(10%);" placeholder="name">
         <input type ="password" id="comment_password" style="width:calc(10%);" placeholder="password">
@@ -68,10 +69,9 @@
         <table id = "commentTable">
         <thread>
           <tr>
-            <th> User</th>
-            <th>| Answer</th>
-            <th>| Reply</th>
-            <th>|</th>
+            <th style="width:calc(10%);"> User</th>
+            <th style="width:calc(15%);">| Tea</th>
+            <th style="width:calc(50%);">| Reply</th>
           </tr>
         </thread>
       </table>
@@ -92,7 +92,7 @@
             </tr>
           </thread>
           <tbody>
-
+            <input type="button" style="margin-bottom: 10px;" class="post_button" value="Post" onclick="location.href='post.html'">
           </tbody>
         </table>
         <input type="button"  class="post_button" value="Post" onclick="location.href='post.html'">
@@ -168,7 +168,7 @@
 
           </tbody>
         </table>
-        <input type="button"  class="post_button" value="Post" onclick="location.href='post.html'">
+        <input type="button"  style="margin-left: 10px;" class="post_button" value="Post" onclick="location.href='post.html'">
       </div>
     </div>
 
