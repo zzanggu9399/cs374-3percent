@@ -23,24 +23,11 @@ html,body {
 .menu_cell:hover {
     background-color: #eee;  
 }
-/* #fb {
-    width: 148px;  
-    height: 50px;  
-    display: block;  
-    text-decoration: none;  
-    text-align: center;  
-    font-size: 150%;
-    font-family: 'Roboto', sans-serif;
-    padding-top: 10%;
-    list-style: none;  
-    position: relative;  
-    background: white;
-    border-radius: 0.5rem;
-    text-transform: uppercase;
-    color: gray
-    
-} */
 
+/*
+drop down menu css from
+https://www.c-sharpcorner.com/UploadFile/cd7c2e/vertical-drop-down-menu-on-hover-using-css-and-html/
+*/
 
 #filtermenu, ul, li, li li {  
     margin: 0;  
@@ -161,6 +148,8 @@ td {
     margin-bottom: 3%;
     text-align: center;
 }
+/*grid layout from
+https://code.tutsplus.com/ko/tutorials/introduction-to-css-grid-layout-with-examples--cms-25392*/
 .wrapper_main {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -224,7 +213,10 @@ td {
 
 
 
-/*Button*/
+/*floating Button from
+http://rwdb.kr/interactionbutton/
+
+*/
 
   
   .buttonwrap {
@@ -313,7 +305,8 @@ td {
     transform: translateY(-7px);
   }
 
-  /*Input form*/
+  /*Input form from
+  https://freefrontend.com/css-input-text/*/
   .form__group {
     position: relative;
     padding: 15px 0 0;
