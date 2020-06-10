@@ -69,6 +69,14 @@ li{
 .col-md-5 div i{
     display:relative;
 }
+
+/*
+This popup event was adapted from a post from nanati in Codepen
+link here:
+https://codepen.io/nanati/pen/qZzZjN?editors=1111
+retrieved in June,6,2020
+*/
+
 .popup {
     display: none;
     position: relative;
