@@ -373,12 +373,13 @@ $.click_row=function(){
                     var newCell5 = newRow.insertCell(4);
                     var newCell6 = newRow.insertCell(5);
                     newCell1.innerHTML = "<i class='fa fa-user' aria-hidden='true'></i>  " + comments[mykey]["Name"];
+                    newCell1.style.width="calc(10%)";
                     newCell1.style.fontWeight="bold";
                     /*newCell2.style.borderLeft="1px solid black";*/
                     newCell2.innerHTML = '|\u0020'+ comments[mykey]["Answer"];
-                    newCell2.style.width="100px";
+                    newCell2.style.width="calc(15%)";
                     newCell3.innerHTML = '|\u0020'+comments[mykey]["Comment"];
-                    newCell3.style.width="250px";
+                    newCell3.style.width="calc(50%)";
                     newCell4.innerHTML = "<span style = 'color : gray'>"+comments[mykey]["Date"]+"</span>";
                     newCell4.style.fontSize = "2px";
                     newCell5.appendChild(deleteBtn);
