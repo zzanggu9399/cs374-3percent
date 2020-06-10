@@ -38,7 +38,7 @@ function cat_type(tab_id){
 }
 
 function get_table(cat_type){
-    console.log(cat_type);
+    //console.log(cat_type);
     if (cat_type=="all"){
         var tableid = document.getElementById("table_all");
     }else if (cat_type=="cat_stressed"){
@@ -92,7 +92,7 @@ function printTable(tab_id) {
     return firebase.database().ref('/text/').on('value', function (snapshot) {
         var category=cat_type(tab_id);
         var tableid=get_table(category);
-        console.log(tableid);
+        //console.log(tableid);
         //var tableid = document.getElementById("table_all");
         var numRows = tableid.rows.length;
         var myValue = snapshot.val();
@@ -163,7 +163,7 @@ function printText(){
 $(document).on('click', '#delete_post', function() {
     var key = document.getElementById('post_key').innerHTML;
     var password;
-    console.log(key);
+    //console.log(key);
 
     var password_input = document.getElementById('delete_password').value
     firebase.database().ref('/text/').on('value', function (snapshot) {
@@ -194,29 +194,7 @@ $(document).on('click', '#delete_post', function() {
 
 
 
-    /*alert(ref.val());
-
-
-
-
-})
-
-
-$(document).on('click', '#close', function(){
-    $(".container.post").hide();
-})
-
-/*
-$('#commentTable').on('click','button',(e) => {
-    //var key = $(this).attr('id')
-    console.log($(this).value);
-})
-
-$(document).on('click', '.commentdel', function(){
-    console.log($(this).value);
-})
-*/
-
+ 
 
 
 
@@ -231,7 +209,6 @@ $(document).on('click', '#comment_btn', function(){
     var password_input = document.getElementById('comment_password').value;
     var key = document.getElementById('post_key').innerHTML;
     var address = "text/" + key + "/Comments";
-    console.log(key); 
         if (comment_input == ""||user_input==''||password_input ==''||answer_input==""){
             alert("There is a empty field");
         }
@@ -251,7 +228,7 @@ $(document).on('click', '#comment_btn', function(){
                 Date : date
             }
             var commentkey = firebase.database().ref(address).push(dic).getKey();
-            alert(commentkey);
+            //alert(commentkey);
     
             var table =document.getElementById("commentTable");
             var numRows = table.rows.length;
@@ -284,7 +261,7 @@ $(document).on('click', '#comment_btn', function(){
             deleteBtn.setAttribute('class','delete_comment');
             deleteBtn.setAttribute("value",commentkey);
             //deleteBtn.setAttribute("id",commentkey);
-            console.log(deleteBtn.value);
+            //console.log(deleteBtn.value);
             //console.log(deleteBtn.id);
             document.getElementById('comment_input').value = '';
             document.getElementById('answer_input').value = '';
@@ -341,7 +318,7 @@ $.click_row=function(){
         query.once('value').then(function(snapshot){
             var myValue=snapshot.val();
             var key=Object.keys(snapshot.val())[0];
-            console.log(key);
+            //console.log(key);
 
             var title=myValue[key].Title;
             var content= myValue[key].Content;
@@ -352,12 +329,12 @@ $.click_row=function(){
             var comments = myValue[key].Comments;
             var answer_input = document.getElementById("answer_input");
             if(myValue[key].Question){
-                console.log("need answer");
+                //console.log("need answer");
                 answer_input.value = "";
                 $('#answer_input').attr("readonly", false);
             }
             else{
-                console.log("dont need answer");
+                //console.log("dont need answer");
                 answer_input.value = "<3";
                 $('#answer_input').attr("readonly", true);
             }
@@ -372,7 +349,7 @@ $.click_row=function(){
             }
             else{
                 var commentskey = Object.keys(comments); //코멘트들의 key array
-                console.log(commentskey);
+                //console.log(commentskey);
                 var numRows = table.rows.length;
                 for (var i = 0; i <numRows-1; i++) {
                     table.deleteRow(1);
@@ -410,7 +387,7 @@ $.click_row=function(){
             }
             
             // get data 까지 구현완료
-            console.log(title);
+            //console.log(title);
             document.getElementById("post_title").innerHTML="<span style =color:green><i class='fa fa-leaf' aria-hidden='true'></i>  </span>" + title;
             document.getElementById("post_content").innerHTML=content;
             document.getElementById("post_author").innerHTML='['+author+']';
@@ -443,7 +420,7 @@ $.click_row=function(){
     $('.tabs li').click(function(){
         $(".container.post").hide();
         var tab_id = $(this).attr('data-tab');
-        console.log(tab_id);
+        //console.log(tab_id);
         $('ul.tabs li').removeClass('current');
         $('.tab-content').removeClass('current');
 
