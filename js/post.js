@@ -35,6 +35,7 @@ $( document ).ready(function() {
         var category = document.getElementById("category");
         var author = document.getElementById("author");
         var password = document.getElementById("password");
+        var is_question = $("#is_question").prop("checked");
         let today = new Date();
         let year = today.getFullYear(); // 년도
         let month = today.getMonth() + 1;  // 월
@@ -54,7 +55,8 @@ $( document ).ready(function() {
                 Category : category.value,
                 Author : author.value,
                 Password : password.value,
-                Date : date
+                Date : date,
+                Question : is_question
             };
             console.log(dic);
             database.ref('text').push(dic);

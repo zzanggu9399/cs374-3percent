@@ -126,9 +126,15 @@ function printTable(tab_id) {
 
                 newCell1.innerHTML = i + 1;
                 var category=myValue[mykey].Category;
-                newCell2.innerHTML = category.slice(4,category.length);
+                
                 newRow.className = 'title1';
 
+                if(myValue[mykey].Question){
+                    newCell2.innerHTML = category.slice(4,category.length) +"  "+"<span style='color:#5f944b'><i class='fa fa-question-circle' aria-hidden='true'></i></span>" ;
+                }
+                else{
+                    newCell2.innerHTML = category.slice(4,category.length);
+                }
                 newCell3.innerHTML = myValue[mykey].Title;
                 newCell4.innerHTML = myValue[mykey].Author;
                 newCell5.innerHTML = commentsCnt;
@@ -219,62 +225,73 @@ $(document).on('click', '.commentdel', function(){
 
 //when click reply button- write at firebase()
 $(document).on('click', '#comment_btn', function(){ 
+    var answer_input = document.getElementById('answer_input').value;
     var comment_input = document.getElementById('comment_input').value;
     var user_input = document.getElementById('comment_name').value;
     var password_input = document.getElementById('comment_password').value;
     var key = document.getElementById('post_key').innerHTML;
     var address = "text/" + key + "/Comments";
-    console.log(key);
-    if (comment_input == ""||user_input==''||password_input ==''){
-        alert("There is a empty field");
-    }
-    else{
-        let today = new Date();
-        let year = today.getFullYear(); // 년도
-        let month = today.getMonth() + 1;  // 월
-        let day = today.getDate();  // 날짜
-        let hours = today.getHours(); // 시
-        let minutes = today.getMinutes();  // 분
-        let date = year + '/' + month + '/' + day + " " + hours +":"+minutes;
-        var dic = {
-            Name : user_input,
-            Password : password_input,
-            Comment : comment_input,
-            Date : date
+    console.log(key); 
+        if (comment_input == ""||user_input==''||password_input ==''||answer_input==""){
+            alert("There is a empty field");
         }
-        var commentkey = firebase.database().ref(address).push(dic).getKey();
-        alert(commentkey);
-
-        var table =document.getElementById("commentTable");
-        var numRows = table.rows.length;
-        var deleteBtn = document.createElement("button");
-        deleteBtn.innerHTML = "<i class='fa fa-trash' aria-hidden='true'></i></button>";
-
-        var newRow = table.insertRow(numRows);
-        var newCell1 = newRow.insertCell(0);
-        var newCell2 = newRow.insertCell(1);
-
-        var newCell3 = newRow.insertCell(2);
-        var newCell4 = newRow.insertCell(3);
-        var newCell5 = newRow.insertCell(4);
+        else{
+            let today = new Date();
+            let year = today.getFullYear(); // 년도
+            let month = today.getMonth() + 1;  // 월
+            let day = today.getDate();  // 날짜
+            let hours = today.getHours(); // 시
+            let minutes = today.getMinutes();  // 분
+            let date = year + '/' + month + '/' + day + " " + hours +":"+minutes;
+            var dic = {
+                Answer : answer_input,
+                Name : user_input,
+                Password : password_input,
+                Comment : comment_input,
+                Date : date
+            }
+            var commentkey = firebase.database().ref(address).push(dic).getKey();
+            alert(commentkey);
+    
+            var table =document.getElementById("commentTable");
+            var numRows = table.rows.length;
+            var deleteBtn = document.createElement("button");
+            deleteBtn.innerHTML = "<i class='fa fa-trash' aria-hidden='true'></i></button>";
+    
+            var newRow = table.insertRow(numRows);
+            var newCell1 = newRow.insertCell(0);
+            var newCell2 = newRow.insertCell(1);
+    
+            var newCell3 = newRow.insertCell(2);
+            var newCell4 = newRow.insertCell(3);
+            var newCell5 = newRow.insertCell(4);
+            var newCell6 = newRow.insertCell(5);
+            
+            newCell1.innerHTML = "<i class='fa fa-user' aria-hidden='true'></i>" + user_input;
+            newCell1.style.fontWeight="bold";
+            /*newCell2.style.borderLeft="1px solid black";*/
+            newCell2.innerHTML = '|\u0020'+ answer_input;
+            newCell2.style.width="100px";
+    
+    
+            newCell3.innerHTML = '|\u0020'+comment_input;
+            newCell3.style.width="250px";
+            newCell4.innerHTML = "<span style = 'color : gray'>"+date+"</span>";
+            newCell4.style.fontSize = "2px";
+            newCell5.appendChild(deleteBtn);
+            newCell6.innerHTML = "<input type ='password' id="+ commentkey + " style='width:calc(50%);' placeholder='password'>";
+    
+            deleteBtn.setAttribute('class','delete_comment');
+            deleteBtn.setAttribute("value",commentkey);
+            //deleteBtn.setAttribute("id",commentkey);
+            console.log(deleteBtn.value);
+            //console.log(deleteBtn.id);
+            document.getElementById('comment_input').value = '';
+            document.getElementById('answer_input').value = '';
         
-        newCell1.innerHTML = "<i class='fa fa-user' aria-hidden='true'></i>" + user_input;
-        newCell1.style.fontWeight="bold";
-        /*newCell2.style.borderLeft="1px solid black";*/
-        newCell2.innerHTML = '|\u0020'+comment_input;
-        newCell2.style.width="250px";
-        newCell3.innerHTML = date;
-        newCell4.appendChild(deleteBtn);
-        newCell5.innerHTML = "<input type ='password' id="+ commentkey + " style='width:calc(50%);' placeholder='password'>";
-
-        deleteBtn.setAttribute('class','delete_comment');
-        deleteBtn.setAttribute("value",commentkey);
-        //deleteBtn.setAttribute("id",commentkey);
-        console.log(deleteBtn.value);
-        //console.log(deleteBtn.id);
-        document.getElementById('comment_input').value = '';
-
-    }
+            
+        }
+    
     //var query = firebase.database().ref('/text/')[key];
     
     //console.log(address);
@@ -333,12 +350,25 @@ $.click_row=function(){
             var author = myValue[key].Author;
             var date = myValue[key].Date;
             var comments = myValue[key].Comments;
-
+            var answer_input = document.getElementById("answer_input");
+            if(myValue[key].Question){
+                console.log("need answer");
+                answer_input.value = "";
+                $('#answer_input').attr("readonly", false);
+            }
+            else{
+                console.log("dont need answer");
+                answer_input.value = "<3";
+                $('#answer_input').attr("readonly", true);
+            }
 
 
 
             if (comments == null){
-                
+                var numRows = table.rows.length;
+                for (var i = 0; i <numRows-1; i++) {
+                    table.deleteRow(1);
+                }
             }
             else{
                 var commentskey = Object.keys(comments); //코멘트들의 key array
@@ -364,14 +394,18 @@ $.click_row=function(){
                     var newCell3 = newRow.insertCell(2);
                     var newCell4 = newRow.insertCell(3);
                     var newCell5 = newRow.insertCell(4);
+                    var newCell6 = newRow.insertCell(5);
                     newCell1.innerHTML = "<i class='fa fa-user' aria-hidden='true'></i>  " + comments[mykey]["Name"];
                     newCell1.style.fontWeight="bold";
                     /*newCell2.style.borderLeft="1px solid black";*/
-                    newCell2.innerHTML = '|\u0020'+comments[mykey]["Comment"];
-                    newCell2.style.width="250px";
-                    newCell3.innerHTML = comments[mykey]["Date"];
-                    newCell4.appendChild(deleteBtn);
-                    newCell5.innerHTML = "<input type ='password' id="+ mykey+ " style='width:calc(50%);' placeholder='password'>";
+                    newCell2.innerHTML = '|\u0020'+ comments[mykey]["Answer"];
+                    newCell2.style.width="100px";
+                    newCell3.innerHTML = '|\u0020'+comments[mykey]["Comment"];
+                    newCell3.style.width="250px";
+                    newCell4.innerHTML = "<span style = 'color : gray'>"+comments[mykey]["Date"]+"</span>";
+                    newCell4.style.fontSize = "2px";
+                    newCell5.appendChild(deleteBtn);
+                    newCell6.innerHTML = "<input type ='password' id="+ mykey+ " style='width:calc(50%);' placeholder='password'>";
                 }
             }
             
