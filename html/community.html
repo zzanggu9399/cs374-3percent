@@ -28,7 +28,7 @@
               <td width=20% class = "menu_cell" style="cursor:pointer" onClick = "location.href='main_page.html'"> Main Page </td>
               <td width=20% class = "menu_cell" style="cursor:pointer; " onClick = "location.href='tea_search.html'"> Search </td>
               <td width=20% class = "menu_cell"  style="cursor:pointer;background-color: #EFFFE9;" onClick = "location.href='community.html'"> Community </td>
-              <td width=20% class = "menu_cell" style="cursor:pointer; " onClick = "location.href='mbteai.html'"> MBTEAi </td>
+              <td width=20% class = "menu_cell" style="cursor:pointer; " onClick = "location.href='mbteai.html'"> MB<span style="color:#5f944b;font-weight:bold">TEA</span>i </td>
             </tr>
           </table>
         </li>
@@ -57,16 +57,21 @@
       <div id="post_date"></div>
       <div id="post_content"></div>
       <div id="posting_comment" style="display: none;">
+        <input type ="text" id="answer_input" style="width:calc(20%);" placeholder="Answer">
         <input type ="text" id="comment_input" style="width:calc(40%);" placeholder="write good reply">
         <input type ="text" id="comment_name" style="width:calc(10%);" placeholder="name">
         <input type ="password" id="comment_password" style="width:calc(10%);" placeholder="password">
         <button type="button" id="comment_btn" value="Reply"><i class="fa fa-reply" aria-hidden="true"></i></button>
       </div>
       <div id="post_comment">
+        <span style="font-weight: bold;"><i class="fa fa-comments" aria-hidden="true"></i> Comments</span>
         <table id = "commentTable">
         <thread>
           <tr>
-            <th colspan="4"><i class="fa fa-comments" aria-hidden="true"></i> Comments</th>
+            <th> User</th>
+            <th>| Answer</th>
+            <th>| Reply</th>
+            <th>|</th>
           </tr>
         </thread>
       </table>
