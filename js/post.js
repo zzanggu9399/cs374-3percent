@@ -45,8 +45,16 @@ $( document ).ready(function() {
         let date = year + '/' + month + '/' + day + " " + hours +":"+minutes;
 
         //alert(category.value);
-        if (category.value == "none"||title.value==''||author.value ==''||password.value==''||maintext.value==''){
-            alert("There is a empty field");
+        if (category.value == "none"){
+            alert("Category field is EMPTY");
+        }else if (title.value==''){
+            alert("Title field is EMPTY");
+        }else if (author.value ==''){
+            alert("Author field is EMPTY");
+        }else if (password.value==''){
+            alert("Password field is EMPTY");
+        }else if (maintext.value==''){
+            alert("Maintext field is EMPTY");
         }
         else{
             var dic = {

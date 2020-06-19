@@ -1,7 +1,61 @@
 //Community.js
 
+
+
 // Your web app's Firebase configuration
 $(document).ready(function(){
+
+var tea_list = tea_information;
+tea_list.sort(function(a, b){
+    var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
+    if (nameA < nameB) //sort string ascending
+     return -1;
+    if (nameA > nameB)
+     return 1;
+    return 0; //default return value (no sorting)
+   });
+var filter_list = new Array();
+var tea_name_list = new Array();
+for (i=0;i < tea_list.length;i++){
+    tea_name_list[i] = tea_list[i].name;
+}
+var auto_selected = false;//check is auto selected
+
+
+
+var availableTags = tea_name_list;
+
+document.addEventListener('keydown', function(event) {
+    //press enter
+    if(event.keyCode == 13) {
+      if(!auto_selected){
+        document.getElementById("comment_btn").click();
+        $( "#answer_input" ).autocomplete("close");
+      }
+      else{
+        auto_selected = false;
+      }
+    }
+  });
+
+$( "#answer_input" ).autocomplete({
+    source: availableTags,
+    minLength: 2,
+    focus: function( event, ui ) {
+        var answer = document.getElementById("answer_input");
+        answer.value = ui.item.value;
+    },
+    select: function(event, ui){
+        auto_selected = true;
+        var answer = document.getElementById("answer_input");
+        answer.value = ui.item.value;
+
+        return false; //it clear input if select function return false
+    }
+  });
+
+
+
 var firebaseConfig = {
     apiKey: "AIzaSyCzWgYskwsU4_XW0hicz0W7zwFEtvxT_lg",
     authDomain: "cs374-20170364.firebaseapp.com",
@@ -17,6 +71,7 @@ firebase.initializeApp(firebaseConfig);
 
 
 var database = firebase.database();
+
 
 
 function cat_type(tab_id){
@@ -373,12 +428,13 @@ $.click_row=function(){
                     var newCell5 = newRow.insertCell(4);
                     var newCell6 = newRow.insertCell(5);
                     newCell1.innerHTML = "<i class='fa fa-user' aria-hidden='true'></i>  " + comments[mykey]["Name"];
+                    newCell1.style.width="calc(10%)";
                     newCell1.style.fontWeight="bold";
                     /*newCell2.style.borderLeft="1px solid black";*/
                     newCell2.innerHTML = '|\u0020'+ comments[mykey]["Answer"];
-                    newCell2.style.width="100px";
+                    newCell2.style.width="calc(15%)";
                     newCell3.innerHTML = '|\u0020'+comments[mykey]["Comment"];
-                    newCell3.style.width="250px";
+                    newCell3.style.width="calc(50%)";
                     newCell4.innerHTML = "<span style = 'color : gray'>"+comments[mykey]["Date"]+"</span>";
                     newCell4.style.fontSize = "2px";
                     newCell5.appendChild(deleteBtn);
@@ -410,6 +466,21 @@ $.click_row=function(){
 //table 에 따라 row 출력하는거 고쳐야함
 
 
+document.addEventListener('keydown', function(event) {
+    //press enter
+    if(event.keyCode == 13) {
+      if(!auto_selected){
+        document.getElementById("comment_btn").click();
+        $( "#name" ).autocomplete("close");
+      }
+      else{
+        auto_selected = false;
+      }
+    }
+  });
+
+
+
 
 
 
@@ -432,3 +503,5 @@ $.click_row=function(){
     });
 
 });
+
+
