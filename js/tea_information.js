@@ -75,5 +75,30 @@ tea_information = [
         tag: ['fruit','sour','sweet','stressed','vitamin c','indigestion'],
         info: "Flavor: Fruity, Sour, Sweet \n\n Situation: Stressed \n\n Effect: Calm Down, Vitamin C, Indigestion",
 },
-
+    {
+        name: "Globe Amaranth",
+        src:"https://www.newscj.com/news/photo/201701/305631_367740_2634.jpg",
+        tag:['herb','bitter','stressed','angry','indigestion'],
+        info : "Flavor: Flowery, Herb, Bitter \n\n Situation: Stressed and Angry \n\n Effect: Calm Down, Indigestion",
+    },
+    {
+        name: "Persimmon leaf Tea",
+        src:"https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F9999C83359C717CC03",
+        tag:['cold','vitamin c', 'herb', 'bitter'],
+        info : "Flavor: Herb, Bitter, similar to Green tea \n\n Situation: Tired (No-caffeine) \n\n Effect: Cold, Vitamin C",
+    },
+    
+    {
+        name: "Oolong Tea",
+        src:"https://www.whychina.co.kr/images/tcm/tea/1.JPG",
+        tag:['herb', 'bitter','fruity','rest'],
+        info : "Flavor: Fruity, Herb, Bitter \n\n Situation: Tired  \n\n Effect: Diet, Blood current",
+    },
+    
+    {
+        name: "Lavender Tea",
+        src:"https://lh3.googleusercontent.com/proxy/piphcJQRYRNQDyTvvOnpYazWz3NjfETX59NqqcV9ZRS2-ETZ8Fh5UK3NAKtw6U2fp4qZhtG7PqrNR_FiI3F7Tnvp5uoP-RMeQd87B8dzRONf_l05IQonkYm9hi9Xu_-FBHwVnXR0ya3S9-F4UfqesdA7L0WLsKB6fHq3OvvJNIG1nqCYBnCJYIEc09U_CA_e5fLMmqFr8RMiCjZQYt_YQ0SHeKYctwwCZcMzL8BCBO7pe1p5fz_cG1Quxxtp0d6o9nQ4C78kiQDRM0xjfjsa_WgmX3Id3nNd7sY1y_HecXwT-V7cWUd8EoPWL9j9zAEAPvc",
+        tag:['herb', 'bitter','sleep','rest','concentration','angry'],
+        info : "Flavor: Herb, Bitter \n\n Situation: Rest and Need a good sleep  \n\n Effect: Concentration and Calm down",
+    },
 ]

@@ -49,10 +49,17 @@
 
     <div id = "middle" style="width:80%; border-top: 2px solid gray; padding-top:1%;">
 
-        <div style="width:90%; margin:0.5%;margin-bottom:1%; margin-right:auto; margin-left:auto; font-size:140%; text-align:center;">
+        <div id="inst" style="width:90%; margin:0.5%;margin-bottom:1%; margin-right:auto; margin-left:auto; font-size:150%; text-align:center;">
           MBTEAi is 'My Best TEA information'<br>
           MBTEAi suggest well-fitted tea to you based on personality test (MBTI&reg;)<br>
           Answer these 20 Questions and find your well-fitted tea!
+        </div>
+        <div id="direct" style="font-size:150%; text-align: center;">
+          <span style="font-weight: bold; color:#b31614;">If you already know your MBTI type?</span> <br>
+          Then, just type your MBTI and see the recommended tea! <br>
+          <input id="direct_input" placeholder="Your MBTI" style="height:35px; width:200px; text-transform: uppercase; margin-top:8px; text-align: center; font-size:25px;" maxlength="4">
+          <input type="button" value="See Answer" id="direct_submit" style="height:30px;">
+        
         </div>
 
         <table id="1table" class="MBTEAi_table">
@@ -349,7 +356,7 @@
             <tr class="blank"></tr>
 
             <tr class='Question'>
-              <td colspan='5'>15. You <span>Tough-Minded and Just</span>, not tender-hearted and merciful</td>
+              <td colspan='5'>15. You are <span>Tough-Minded and Just</span>, not tender-hearted and merciful</td>
             </tr>
 
             <tr class="Answer">

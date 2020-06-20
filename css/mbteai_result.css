@@ -62,9 +62,10 @@ li{
 
 .col-md-5 p{
     margin-left:1%;
+    margin-bottom:0;
 }
 .col-md-5 div{
-    display:inline-block;
+    display:block;
 }
 .col-md-5 div i{
     display:relative;
@@ -95,5 +96,27 @@ retrieved in June,6,2020
   
   .col-md-5 div i:hover + .popup {
     display: block;
+  }
+
+.image{
+    display:none;
+    width:300px;
+    z-index:10000;
+    position:relative;
+    border-radius: 8px;
+}
+.fa-file{
+    display:inline-block;
+}
+.file {
+    display: none;
+    position: relative;
+    width: 90%;
+    bottom:1px;
+    border-radius: 8px;
+    background: #333;
+    color: #fff;
+    z-index:100;
+    float:left;
   }
   

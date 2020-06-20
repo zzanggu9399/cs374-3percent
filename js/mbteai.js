@@ -125,13 +125,40 @@ $('#submit').click(function(){
             }
         }
 
-
-        
-
-        
-
         
     }
 
 
 })
+
+// To see the result not doing the MBTI test
+var mbti = ["ENFJ", "ENFP", "ENTJ", "ENTP", "ESFJ", "ESFP", "ESTJ", "ESTP", "INFJ", "INFP", "INTJ", "INTP", "ISFJ", "ISFP", "ISTJ", "ISTP"];
+
+function directR(ans, num){
+    if(ans == ""){
+        alert("empty field!");
+    
+    }
+    else if(num != -1){
+        $(location).attr("href",'mbteai_result.html?'+ans);
+    }
+    else if(num == -1){
+        alert("Please type a vaild MBTI type.");
+        $('#direct_input').val('');
+        $('#direct_input').focus();
+    }
+}
+
+$('#direct_submit').click(function(){
+    var ans = $('#direct_input').val().toUpperCase();
+    var num = mbti.indexOf(ans);
+    directR(ans, num);
+})
+
+$(document).keydown(function (key) {
+    if (key.keyCode == 13) {
+        var ans = $('#direct_input').val().toUpperCase();
+        var num = mbti.indexOf(ans);
+        directR(ans,num);
+    }
+});
