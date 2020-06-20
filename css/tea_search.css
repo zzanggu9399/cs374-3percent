@@ -183,7 +183,7 @@ https://code.tutsplus.com/ko/tutorials/introduction-to-css-grid-layout-with-exam
   left: 50%;
   transform: translate(-50%, -50%);
   visibility: hidden;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .grid:hover .caption_center{
