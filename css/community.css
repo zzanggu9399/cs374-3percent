@@ -131,3 +131,10 @@ td{
     background-color: yellowgreen;
     color:white;
 }
+
+.ta {
+
+}
+.ta:hover {
+    cursor:pointer;
+}
