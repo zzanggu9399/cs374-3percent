@@ -111,6 +111,14 @@ function get_table(cat_type){
 
 function printTable_type(myValue, keyList,tableid, category){
     var j=1;
+    var total=0;
+    for (var i=0; i<keyList.length; i++){
+        var mykey = keyList[i]
+        if(category==myValue[mykey].Category){
+            total+=1;
+        }
+    }
+
     for (var i = 0; i < keyList.length; i++) {
         var mykey = keyList[i];
         var commentsCnt = 0;
@@ -121,7 +129,7 @@ function printTable_type(myValue, keyList,tableid, category){
             commentsCnt = Object.keys(myValue[mykey].Comments).length;
         }
         if (category==myValue[mykey].Category) {
-            var newRow = tableid.insertRow(-1);
+            var newRow = tableid.insertRow(1);
             var newCell1 = newRow.insertCell(0);
             var newCell2 = newRow.insertCell(1);
             var newCell3 = newRow.insertCell(2);
@@ -130,12 +138,21 @@ function printTable_type(myValue, keyList,tableid, category){
             var newCell6 = newRow.insertCell(5);
             newCell1.innerHTML = j;
             var category=myValue[mykey].Category;
-            newCell2.innerHTML = category.slice(4,category.length);
             newCell3.innerHTML = myValue[mykey].Title;
             newCell4.innerHTML = myValue[mykey].Author;
             newCell5.innerHTML = commentsCnt;
             newCell6.innerHTML = myValue[mykey].Date;
             newRow.className = 'title1';
+
+
+
+            if(myValue[mykey].Question){
+                newCell2.innerHTML = category.slice(4,category.length) +"  "+"<span style='color:#5f944b'><i class='fa fa-question-circle' aria-hidden='true'></i></span>" ;
+            }
+            else{
+                newCell2.innerHTML = category.slice(4,category.length);
+            }
+            total-=1;
             j+=1;
         }
 
