@@ -23,12 +23,7 @@ tea_information = [
         tag: ['sour', 'vitamin c','Fruit'],
         info: "Flavor: Sour\n\nSituation: -\n\nEffect: Vitamin c"
     },
-    {
-        name: "Persimmon leaf tea",
-        src: "https://post-phinf.pstatic.net/MjAxNzEyMTJfNiAg/MDAxNTEzMDU3MTY5NjA1.EiYvqlkIvd-aWv7uHSXO4n9rEmBebRfVRgsZf_tli6og.IWp07H7UAg3c8vKQ0ygspMJbraAjXGv5ZHwA2eH17fIg.JPEG/image_3337162861513057103005.jpg?type=w1200",
-        tag: ['vitamin c','sweet', 'savory','cold'],
-        info: "Flavor: Sweet, Savory\n\nSituation: -\n\nEffect: Cold, Vitamin c"
-    },
+
     {
         name: "Balloonflower tea",
         src: "https://sm-img3.wemep.co.kr/resize_460x460/seller/deal/1/066/3350661/09c9317b15f740629d2e2aa55a5b10c7.jpg",
@@ -73,7 +68,7 @@ tea_information = [
         name: "Hibiscus tea",
         src: "https://images-na.ssl-images-amazon.com/images/I/51Zx4YRnyWL._SL1000_.jpg",
         tag: ['fruit','sour','sweet','stressed','vitamin c','indigestion'],
-        info: "Flavor: Fruity, Sour, Sweet \n\n Situation: Stressed \n\n Effect: Calm Down, Vitamin C, Indigestion",
+        info: "Flavor: Fruity, Sour, Sweet \n\n Situation: Stressed \n\n Effect: Calm Down, Vitamin C, \nIndigestion",
 },
     {
         name: "Globe Amaranth",
@@ -83,11 +78,10 @@ tea_information = [
     },
     {
         name: "Persimmon leaf Tea",
-        src:"https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F9999C83359C717CC03",
-        tag:['cold','vitamin c', 'herb', 'bitter'],
-        info : "Flavor: Herb, Bitter, similar to Green tea \n\n Situation: Tired (No-caffeine) \n\n Effect: Cold, Vitamin C",
+        src: "https://post-phinf.pstatic.net/MjAxNzEyMTJfNiAg/MDAxNTEzMDU3MTY5NjA1.EiYvqlkIvd-aWv7uHSXO4n9rEmBebRfVRgsZf_tli6og.IWp07H7UAg3c8vKQ0ygspMJbraAjXGv5ZHwA2eH17fIg.JPEG/image_3337162861513057103005.jpg?type=w1200",
+        tag:['cold','vitamin c', 'herb', 'bitter', 'savory'],
+        info : "Flavor: Herb, Bitter, Savory \n similar to Green tea \n\n Situation: Tired (No-caffeine) \n\n Effect: Cold, Vitamin C",
     },
-    
     {
         name: "Oolong Tea",
         src:"https://www.whychina.co.kr/images/tcm/tea/1.JPG",

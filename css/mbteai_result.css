@@ -105,9 +105,7 @@ retrieved in June,6,2020
     position:relative;
     border-radius: 8px;
 }
-.fa-file{
-    display:inline-block;
-}
+
 .file {
     display: none;
     position: relative;

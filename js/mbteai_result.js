@@ -69,9 +69,9 @@ $('.fa-file').on({
     
     mouseover: function(){
         console.log($(this).parent().next().first());
-            $(this).parent().next().css("display","block");
+        $(this).next().next().next().css("display","block");
     },
     mouseleave: function(){     
-        $(this).parent().next().css("display","none");
+        $(this).next().next().next().css("display","none");
     }
 });
