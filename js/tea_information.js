@@ -91,7 +91,7 @@ tea_information = [
     
     {
         name: "Lavender Tea",
-        src:"https://lh3.googleusercontent.com/proxy/piphcJQRYRNQDyTvvOnpYazWz3NjfETX59NqqcV9ZRS2-ETZ8Fh5UK3NAKtw6U2fp4qZhtG7PqrNR_FiI3F7Tnvp5uoP-RMeQd87B8dzRONf_l05IQonkYm9hi9Xu_-FBHwVnXR0ya3S9-F4UfqesdA7L0WLsKB6fHq3OvvJNIG1nqCYBnCJYIEc09U_CA_e5fLMmqFr8RMiCjZQYt_YQ0SHeKYctwwCZcMzL8BCBO7pe1p5fz_cG1Quxxtp0d6o9nQ4C78kiQDRM0xjfjsa_WgmX3Id3nNd7sY1y_HecXwT-V7cWUd8EoPWL9j9zAEAPvc",
+        src:"https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/Diet-weight-loss/642x361-How_to_Make_Lavender_Tea-1.jpg?w=1155",
         tag:['herb', 'bitter','sleep','rest','concentration','angry'],
         info : "Flavor: Herb, Bitter \n\n Situation: Rest and Need a good sleep  \n\n Effect: Concentration and Calm down",
     },
