@@ -121,7 +121,9 @@ td{
     width:80px;
 }
 
-
+.redirect{
+    margin-left: 2px;
+}
 
 .post_button{
     width:100px;

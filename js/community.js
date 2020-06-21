@@ -24,7 +24,7 @@ var auto_selected = false;//check is auto selected
 
 
 var availableTags = tea_name_list;
-
+console.log(availableTags);
 document.addEventListener('keydown', function(event) {
     //press enter
     if(event.keyCode == 13) {
@@ -40,7 +40,7 @@ document.addEventListener('keydown', function(event) {
 
 $( "#answer_input" ).autocomplete({
     source: availableTags,
-    minLength: 2,
+    minLength: 1,
     focus: function( event, ui ) {
         var answer = document.getElementById("answer_input");
         answer.value = ui.item.value;
@@ -321,6 +321,12 @@ $(document).on('click', '#comment_btn', function(){
             /*newCell2.style.borderLeft="1px solid black";*/
             newCell2.innerHTML = '|\u0020'+ answer_input;
             newCell2.style.width="100px";
+            if(availableTags.indexOf(answer_input) != -1){
+                var redirectBtn = document.createElement("button");
+                redirectBtn.innerHTML = "<i class='fa fa-search' aria-hidden='true'></i>";
+                redirectBtn.setAttribute('class','redirect');
+                newCell2.appendChild(redirectBtn);
+            }
     
     
             newCell3.innerHTML = '|\u0020'+comment_input;
@@ -346,6 +352,9 @@ $(document).on('click', '#comment_btn', function(){
     //console.log(address);
 });
 
+$(document).on('click','.redirect',function(){
+    $(location).attr('href', './tea_search.html')
+});
 
 
 $(document).on('click','.delete_comment',function(){
@@ -429,6 +438,8 @@ $.click_row=function(){
                 for(var i =0;i<commentskey.length;i++) {
 
                     var deleteBtn = document.createElement("button");
+                    
+                    
                     //var commentPW = document.createElement("input");
                     deleteBtn.innerHTML = "<i class='fa fa-trash' aria-hidden='true'></i>";
                     deleteBtn.setAttribute('class','delete_comment');
@@ -449,6 +460,14 @@ $.click_row=function(){
                     newCell1.style.fontWeight="bold";
                     /*newCell2.style.borderLeft="1px solid black";*/
                     newCell2.innerHTML = '|\u0020'+ comments[mykey]["Answer"];
+
+                    if(availableTags.indexOf(comments[mykey]["Answer"]) != -1){
+                        var redirectBtn = document.createElement("button");
+                        redirectBtn.innerHTML = "<i class='fa fa-search' aria-hidden='true'></i>";
+                        redirectBtn.setAttribute('class','redirect');
+                        newCell2.appendChild(redirectBtn);
+                    }
+
                     newCell2.style.width="calc(15%)";
                     newCell3.innerHTML = '|\u0020'+comments[mykey]["Comment"];
                     newCell3.style.width="calc(50%)";
