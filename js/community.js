@@ -321,12 +321,14 @@ $(document).on('click', '#comment_btn', function(){
             /*newCell2.style.borderLeft="1px solid black";*/
             newCell2.innerHTML = '|\u0020'+ answer_input;
             newCell2.style.width="100px";
+            /*
             if(availableTags.indexOf(answer_input) != -1){
                 var redirectBtn = document.createElement("button");
                 redirectBtn.innerHTML = "<i class='fa fa-search' aria-hidden='true'></i>";
                 redirectBtn.setAttribute('class','redirect');
                 newCell2.appendChild(redirectBtn);
             }
+            */
     
     
             newCell3.innerHTML = '|\u0020'+comment_input;
@@ -460,13 +462,14 @@ $.click_row=function(){
                     newCell1.style.fontWeight="bold";
                     /*newCell2.style.borderLeft="1px solid black";*/
                     newCell2.innerHTML = '|\u0020'+ comments[mykey]["Answer"];
-
+                    /*
                     if(availableTags.indexOf(comments[mykey]["Answer"]) != -1){
                         var redirectBtn = document.createElement("button");
                         redirectBtn.innerHTML = "<i class='fa fa-search' aria-hidden='true'></i>";
                         redirectBtn.setAttribute('class','redirect');
                         newCell2.appendChild(redirectBtn);
                     }
+                    */
 
                     newCell2.style.width="calc(15%)";
                     newCell3.innerHTML = '|\u0020'+comments[mykey]["Comment"];
