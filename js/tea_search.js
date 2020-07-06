@@ -18,8 +18,41 @@ for (i=0;i < tea_list.length;i++){
 var auto_selected = false;//check is auto selected
 
 $( document ).ready(function() {
-    loading("",true);
+    temp = location.href.split("?");
+    var branch = temp.length
+    
+    if(branch == 2){ // only redirect
+        var t1= temp[1];
+        var t2 = t1.split("%20");
+        var name1;
+        var name2;
+        if(t2.length == 1){ // in the case of 'Rosemary'
+            name1 = t2[0];
+            if(name1.indexOf('#') == -1){
+                searchTeaR(name1);
+            }
+            else{
+                loading("",true);
+            }
+        }
+        else{
+            name1 = t2[0];
+            name2 = t2[1];
+            if(name2.indexOf('#') == -1){
+                searchTeaR(name1 + ' ' + name2 );
+            }
+            else{
+                loading("",true);
+            }
+
+        }
+    }
+    else{
+        loading("",true);
+    }
+    
 });
+
 
 document.addEventListener('keydown', function(event) {
     //press enter
@@ -188,24 +221,29 @@ function filterTea(name,all){
 }
 
 function loading(name,all) {
-    var imagegrid = document.getElementById('image_grid');
-    //delete exist child
-    while(imagegrid.childElementCount>0){
-        imagegrid.removeChild(imagegrid.childNodes[0]);
-
+        var imagegrid = document.getElementById('image_grid');
+        //delete exist child
+        while(imagegrid.childElementCount>0){
+            imagegrid.removeChild(imagegrid.childNodes[0]);
+    
+        }
+        document.getElementById('name').value = "";
+        var mask = document.getElementById('mask')
+        mask.style.display = "flex";
+    
+        setTimeout(function(){filterTea(name,all); mask.style.display="none"}, 350);
     }
-    document.getElementById('name').value = "";
-    var mask = document.getElementById('mask')
-    mask.style.display = "flex";
 
-    setTimeout(function(){filterTea(name,all); mask.style.display="none"}, 350);
-}
+
 
 function searchTea(){
     var input = document.getElementById('name');
     if (input.value == "" || input.value.replace(/\s/g, '') == "") return;
     loading(input.value.toLowerCase(),false);
-    
+}
+
+function searchTeaR(teaname){
+    loading(teaname.toLowerCase(),false);
 }
 
 function delCell(name){

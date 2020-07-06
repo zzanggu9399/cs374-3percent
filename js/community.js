@@ -355,7 +355,12 @@ $(document).on('click', '#comment_btn', function(){
 });
 
 $(document).on('click','.redirect',function(){
-    $(location).attr('href', './tea_search.html')
+    var iii = $(this).parent();
+    //var iiii = iii.text();
+    var teaname = iii.text();
+    var tearr = teaname.split('| ');
+    //console.log(tearr[1])
+    $(location).attr('href', './tea_search.html?' + tearr[1])
 });
 
 
