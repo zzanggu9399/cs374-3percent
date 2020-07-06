@@ -139,7 +139,16 @@ function addFilter(filter_name){
 };
 
 function filterReset(){
+
     if (filter_list.length == 0){
+
+        temp = location.href.split("?");
+        var branch = temp.length
+        
+        if(branch == 2){ // only redirect
+            loading("",true)
+        }
+
         return;
     }
     
